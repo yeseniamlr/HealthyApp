@@ -171,7 +171,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\bg-01.jpg" />
     <Content Include="Images\icons\favicon.ico" />
     <Content Include="Images\icons\map-marker.png" />
     <Content Include="Images\logo.png" />
