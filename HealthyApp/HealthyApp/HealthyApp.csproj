@@ -168,6 +168,7 @@
     <Compile Include="Models\Consultorio.cs" />
     <Compile Include="Models\DbContextHealthyAppDataBase.cs" />
     <Compile Include="Models\Dia_Semana.cs" />
+    <Compile Include="Models\Mi_Nutriologo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

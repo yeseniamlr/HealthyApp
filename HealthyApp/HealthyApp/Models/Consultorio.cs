@@ -33,6 +33,8 @@ namespace HealthyApp.Models
         [Required(ErrorMessage = "Codigo Postal es Requerido")]
         public int Codigo_Postal { get; set; }
 
+        public virtual ICollection<Mi_Nutriologo> Mi_Nutriologos{ get; set; }
+
 
     }
 }

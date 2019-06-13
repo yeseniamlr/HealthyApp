@@ -22,6 +22,7 @@ namespace HealthyApp.Models
         }
 
         public virtual ICollection<Cita> Citas { get; set; }
+        public virtual ICollection<Mi_Nutriologo> Mi_Nutriologos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
