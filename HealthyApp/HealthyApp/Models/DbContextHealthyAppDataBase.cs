@@ -21,7 +21,7 @@ namespace HealthyApp.Models
 
         }
 
-
+        public virtual ICollection<Cita> Citas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
