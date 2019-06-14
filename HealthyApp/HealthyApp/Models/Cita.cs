@@ -23,6 +23,10 @@ namespace HealthyApp.Models
         public int IdDia_Semana { get; set; }
         public Dia_Semana Dia_Semana { get; set; }
 
+        [ForeignKey("Mes")]
+        public int IdMes { get; set; }
+        public Mes Mes { get; set; }
+
 
     }
 }
