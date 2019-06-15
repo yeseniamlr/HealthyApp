@@ -165,12 +165,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cita.cs" />
+    <Compile Include="Models\Comida.cs" />
     <Compile Include="Models\Consultorio.cs" />
     <Compile Include="Models\DbContextHealthyAppDataBase.cs" />
     <Compile Include="Models\Dia_Semana.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Mes.cs" />
+    <Compile Include="Models\Mi_Menu.cs" />
     <Compile Include="Models\Mi_Nutriologo.cs" />
+    <Compile Include="Models\Perfil.cs" />
+    <Compile Include="Models\Progreso.cs" />
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

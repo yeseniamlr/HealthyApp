@@ -16,5 +16,7 @@ namespace HealthyApp.Models
         public string Dia { get; set; }
 
         public virtual ICollection<Cita> Citas {get;set;}
+        public virtual ICollection<Mi_Menu> Mi_Menus { get; set; }
+
     }
 }
