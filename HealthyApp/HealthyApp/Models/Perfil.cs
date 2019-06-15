@@ -33,7 +33,7 @@ namespace HealthyApp.Models
         public string Foto_paciente { get; set; }
 
         [ForeignKey("Progreso")]
-        public int IdProgreso { get; set; }
+        public int ProgresoID { get; set; }
         public Progreso Progreso { get; set; }
 
 

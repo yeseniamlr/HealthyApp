@@ -21,7 +21,7 @@ namespace HealthyApp.Models
         public string Password { get; set; }
 
         [ForeignKey("Rol")]
-        public int IdRol { get; set; }
+        public int RolID { get; set; }
         public Rol Rol { get; set; }
 
 

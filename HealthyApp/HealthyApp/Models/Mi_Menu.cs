@@ -19,11 +19,11 @@ namespace HealthyApp.Models
 
 
         [ForeignKey("Comida")]
-        public int IdComida { get; set; }
+        public int ComidaID { get; set; }
         public Comida Comida { get; set; }
 
         [ForeignKey("Dia Semana")]
-        public int IdDia_Semana { get; set; }
+        public int Dia_SemanaId { get; set; }
         public Dia_Semana Dia_Semana { get; set; }
     }
 }

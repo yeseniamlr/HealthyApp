@@ -37,7 +37,7 @@ namespace HealthyApp.Models
         public string Descripcion { get; set; }
 
         [ForeignKey("Consultorio")]
-        public int IdConsultorio { get; set; }
+        public int ConsultorioID { get; set; }
         public Consultorio Consultorio  { get; set; }
 
 

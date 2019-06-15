@@ -20,11 +20,11 @@ namespace HealthyApp.Models
         public int Dia_Numero { get; set; }
 
         [ForeignKey("Dia_Semana")]
-        public int IdDia_Semana { get; set; }
+        public int Dia_SemanaID { get; set; }
         public Dia_Semana Dia_Semana { get; set; }
 
         [ForeignKey("Mes")]
-        public int IdMes { get; set; }
+        public int MesID { get; set; }
         public Mes Mes { get; set; }
 
 
