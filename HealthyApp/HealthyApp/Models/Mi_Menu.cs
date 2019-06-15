@@ -13,17 +13,19 @@ namespace HealthyApp.Models
         [Key]
         public int ID { get; set; }
 
+        [ForeignKey("Comida")]
+        public int ComidaID { get; set; }
+        public Comida Comida { get; set; }
+
+        [ForeignKey("Dia_Semana")]
+        public int Dia_SemanaID { get; set; }
+        public Dia_Semana Dia_Semana { get; set; }
+
         [Required(ErrorMessage = "El Horario es Requerido")]
         [StringLength(15, ErrorMessage = "El Horario es de 15 caracteres")]
         public string Horario { get; set; }
 
 
-        [ForeignKey("Comida")]
-        public int ComidaID { get; set; }
-        public Comida Comida { get; set; }
-
-        [ForeignKey("Dia Semana")]
-        public int Dia_SemanaId { get; set; }
-        public Dia_Semana Dia_Semana { get; set; }
+        
     }
 }

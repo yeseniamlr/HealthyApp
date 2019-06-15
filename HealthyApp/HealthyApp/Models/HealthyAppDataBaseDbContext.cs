@@ -11,11 +11,11 @@ namespace HealthyApp.Models
 
         [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
 
-    public class DbContextHealthyAppDataBase:DbContext
+    public class HealthyAppDataBaseDbContext:DbContext
 
 
     {
-        public DbContextHealthyAppDataBase() : base("DbContextHealthyAppDataBase")
+        public HealthyAppDataBaseDbContext() : base("HealthyAppDataBaseDbContext")
         {
 
 

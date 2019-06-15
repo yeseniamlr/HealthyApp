@@ -164,10 +164,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906152337592_inicial.cs" />
+    <Compile Include="Migrations\201906152337592_inicial.Designer.cs">
+      <DependentUpon>201906152337592_inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cita.cs" />
     <Compile Include="Models\Comida.cs" />
     <Compile Include="Models\Consultorio.cs" />
-    <Compile Include="Models\DbContextHealthyAppDataBase.cs" />
+    <Compile Include="Models\HealthyAppDataBaseDbContext.cs" />
     <Compile Include="Models\Dia_Semana.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Mes.cs" />
@@ -302,6 +307,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906152337592_inicial.resx">
+      <DependentUpon>201906152337592_inicial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

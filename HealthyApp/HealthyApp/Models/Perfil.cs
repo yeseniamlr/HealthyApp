@@ -13,6 +13,10 @@ namespace HealthyApp.Models
         public int ID { get; set; }
 
 
+        [ForeignKey("Progreso")]
+        public int ProgresoID { get; set; }
+        public Progreso Progreso { get; set; }
+
         [Required(ErrorMessage = "El Nombre es Requerido")]
         [StringLength(25, ErrorMessage = "El nombre es de 25 caracteres")]
         public string Nombre { get; set; }
@@ -31,11 +35,7 @@ namespace HealthyApp.Models
 
         [Required(ErrorMessage = "La Foto es Requerida")]
         public string Foto_paciente { get; set; }
-
-        [ForeignKey("Progreso")]
-        public int ProgresoID { get; set; }
-        public Progreso Progreso { get; set; }
-
+        
 
     }
 }

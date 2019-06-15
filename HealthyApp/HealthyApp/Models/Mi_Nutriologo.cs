@@ -13,6 +13,10 @@ namespace HealthyApp.Models
         [Key]
         public int ID { get; set; }
 
+        [ForeignKey("Consultorio")]
+        public int ConsultorioID { get; set; }
+        public Consultorio Consultorio { get; set; }
+
         [Required(ErrorMessage = "La Foto es Requerida")]
         public string Foto { get; set; }
 
@@ -36,9 +40,7 @@ namespace HealthyApp.Models
         [StringLength(100, ErrorMessage = "La descripcion es de 100 caracteres")]
         public string Descripcion { get; set; }
 
-        [ForeignKey("Consultorio")]
-        public int ConsultorioID { get; set; }
-        public Consultorio Consultorio  { get; set; }
+       
 
 
     }
