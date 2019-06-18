@@ -16,40 +16,43 @@ namespace HealthyApp.Controllers
     {
         #region Log In
         // GET: Login
-
         public ActionResult Login(UserModel usm)
         {
-            if (ModelState.IsValid)
+            if (Session["UserName"] == null)
             {
-                using (HealthyAppDataBaseDbContext dbCtx = new HealthyAppDataBaseDbContext())
+                if (ModelState.IsValid)
                 {
-                    string encryptedPass = EncryptionDecryption.EncriptarSHA1(usm.Password);
-
-                    var isLogged = dbCtx.Logins
-                            .Where(x => x.Usuario.Equals(usm.UserName)
-                            && x.Password.Equals(encryptedPass))
-                            .FirstOrDefault();
-
-
-                    if (isLogged != null)
+                    using (HealthyAppDataBaseDbContext dbCtx = new HealthyAppDataBaseDbContext())
                     {
-                        Session["UserName"] = usm.UserName.ToString();
+                        //string encryptedPass = EncryptionDecryption.EncriptarSHA1(usm.Password);
 
-                        var path = Server.MapPath("~") + @"Files";
-                        var fileName = "/Log.txt";
-                        StreamWriter sw = new StreamWriter(path + fileName, true);
-                        sw.WriteLine("Login -" + DateTime.Now + " " + "El usuario : " + usm.UserName + " ingresó");
-                        sw.Close();
+                        var isLogged = dbCtx.Logins
+                                .Where(x => x.Usuario.Equals(usm.UserName)
+                                && x.Password.Equals(usm.Password))
+                                .FirstOrDefault();
 
-                        return RedirectToAction("Index", "Image");
+
+                        if (isLogged != null)
+                        {
+                            Session["UserName"] = usm.UserName.ToString();
+
+                            var path = Server.MapPath("~") + @"Files";
+                            var fileName = "/Log.txt";
+                            StreamWriter sw = new StreamWriter(path + fileName, true);
+                            sw.WriteLine("Login -" + DateTime.Now + " " + "El usuario : " + usm.UserName + " ingresó");
+                            sw.Close();
+
+                            return RedirectToAction("Index", "Home");
+                        }
+                        else
+                        {
+                            //return RedirectToAction("Registrar","Login");
+                        }
+
                     }
-                    else
-                    {
-                        //return RedirectToAction("Registrar","Login");
-                    }
-
                 }
             }
+
 
             return View(usm);
         }
