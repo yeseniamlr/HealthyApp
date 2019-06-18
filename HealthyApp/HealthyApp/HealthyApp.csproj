@@ -164,6 +164,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\EncryptionDecryption.cs" />
     <Compile Include="Migrations\201906152337592_inicial.cs" />
     <Compile Include="Migrations\201906152337592_inicial.Designer.cs">
       <DependentUpon>201906152337592_inicial.cs</DependentUpon>
@@ -182,6 +183,7 @@
     <Compile Include="Models\Progreso.cs" />
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\UserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -197,6 +199,7 @@
     <Content Include="Content\Styles\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
     <Content Include="Content\Styles\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
     <Content Include="favicon.ico" />
+    <Content Include="Files\Log.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
