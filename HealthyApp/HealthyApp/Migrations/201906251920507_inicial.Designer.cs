@@ -13,7 +13,7 @@ namespace HealthyApp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201906152337592_inicial"; }
+            get { return "201906251920507_inicial"; }
         }
         
         string IMigrationMetadata.Source

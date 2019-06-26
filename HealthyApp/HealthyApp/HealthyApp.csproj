@@ -159,15 +159,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\EncryptionDecryption.cs" />
-    <Compile Include="Migrations\201906152337592_inicial.cs" />
-    <Compile Include="Migrations\201906152337592_inicial.Designer.cs">
-      <DependentUpon>201906152337592_inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201906251920507_inicial.cs" />
+    <Compile Include="Migrations\201906251920507_inicial.Designer.cs">
+      <DependentUpon>201906251920507_inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cita.cs" />
@@ -184,6 +186,10 @@
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\UserModel.cs" />
+    <Compile Include="ViewModel\Usuario.cs" />
+    <Compile Include="ViewModel\UsuarioCommon.cs" />
+    <Compile Include="ViewModel\UsuarioResult.cs" />
+    <Compile Include="ViewModel\UsuariosResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -266,6 +272,7 @@
     <Content Include="Content\Styles\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
     <Content Include="Content\Styles\fonts\poppins\Poppins-Thin.ttf" />
     <Content Include="Content\Styles\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Areas\Api\Views\web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -294,9 +301,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\HomePage\Usuarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Controllers\" />
+    <Folder Include="Areas\Api\Models\" />
+    <Folder Include="Areas\Api\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -312,8 +323,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906152337592_inicial.resx">
-      <DependentUpon>201906152337592_inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906251920507_inicial.resx">
+      <DependentUpon>201906251920507_inicial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

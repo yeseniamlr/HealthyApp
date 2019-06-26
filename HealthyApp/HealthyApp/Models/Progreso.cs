@@ -12,6 +12,11 @@ namespace HealthyApp.Models
         [Key]
         public int ID { get; set; }
 
+
+        [ForeignKey("Perfil")]
+        public int PerfilID { get; set; }
+        public Perfil Perfil { get; set; }
+
         [Required(ErrorMessage = "El IMC es Requerido")]
         public decimal IMC { get; set; }
 
@@ -34,7 +39,7 @@ namespace HealthyApp.Models
         [StringLength(15, ErrorMessage = "La fecha es de 15 caracteres")]
         public string Fecha{ get; set; }
 
-        public virtual ICollection<Progreso> Progresos { get; set; } 
+       
 
 
 
