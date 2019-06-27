@@ -73,17 +73,38 @@ namespace HealthyApp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Perfil usuario = new Perfil();
 
+                    Login login = new Login();
+
+                    login.Password = model.Usuario.Password;
+                    login.Usuario = model.Usuario.User;
+                    login.RolID = 2;
+
+                    dbContext.Logins.Add(login);
+
+                    dbContext.SaveChanges();
+
+                    var query = (from l in dbContext.Logins
+                                 where l.Usuario == model.Usuario.User && l.Password == model.Usuario.Password
+                                 select new
+                                 {
+                                     id = l.ID
+
+                                 }).SingleOrDefault();
+
+                    Perfil usuario = new Perfil();
+                    
 
                     usuario.Nombre = model.Usuario.Nombre;
                     usuario.Apellido = model.Usuario.Apellido;
                     usuario.Edad = model.Usuario.Edad;
                     usuario.Genero = model.Usuario.Genero;
                     usuario.Foto_paciente = model.Usuario.Foto_paciente;
+                    usuario.LoginID = query.id;
+                    
 
                     //Se agrega a la base de datos
-
+                    
                     dbContext.Perfils.Add(usuario);
                     dbContext.SaveChanges();
 

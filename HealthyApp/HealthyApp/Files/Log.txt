@@ -3,3 +3,8 @@ Login -6/18/2019 10:14:18 AM El usuario : Omar ingresó
 Login -6/25/2019 2:00:40 PM El usuario : Omar ingresó
 Login -6/25/2019 3:55:20 PM El usuario : Omar ingresó
 Login -6/25/2019 3:57:33 PM El usuario : Omar ingresó
+Login -6/26/2019 10:38:55 AM El usuario : Omar ingresó
+Login -6/26/2019 10:43:24 AM El usuario : Omar ingresó
+Login -6/26/2019 11:50:39 AM El usuario : Omar ingresó
+Login -6/27/2019 2:32:46 PM El usuario : Omar ingresó
+Login -6/27/2019 2:37:19 PM El usuario : Omar ingresó

@@ -31,5 +31,17 @@ namespace HealthyApp.ViewModel
 
         [Required(ErrorMessage = "La Foto es Requerida")]
         public string Foto_paciente { get; set; }
+
+        [Required(ErrorMessage = "El Usuario es Requerido")]
+        [StringLength(15, ErrorMessage = "El Usuario es de 25 caracteres")]
+        [Display(Name = "Usuario")]
+        public string User { get; set; }
+
+        [Required(ErrorMessage = "El Password es Requerido")]
+        [StringLength(15, ErrorMessage = "El Password es de 25 caracteres")]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+
     }
 }

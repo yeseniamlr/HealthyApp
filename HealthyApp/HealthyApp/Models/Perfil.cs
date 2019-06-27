@@ -13,7 +13,9 @@ namespace HealthyApp.Models
         public int ID { get; set; }
 
 
-        
+        [ForeignKey("Login")]
+        public int LoginID { get; set; }
+        public Login Login { get; set; }
 
         [Required(ErrorMessage = "El Nombre es Requerido")]
         [StringLength(25, ErrorMessage = "El nombre es de 25 caracteres")]

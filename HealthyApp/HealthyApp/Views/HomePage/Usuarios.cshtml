@@ -84,6 +84,17 @@
         @Html.TextBoxFor(u => u.Usuario.Foto_paciente, new { @class = "form-control" })
         @Html.ValidationMessageFor(u => u.Usuario.Foto_paciente, "", new { @class = "text-danger" })
     </div>
+    <div>
+        @Html.LabelFor(u => u.Usuario.User)
+        @Html.TextBoxFor(u => u.Usuario.User, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.Usuario.User, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(u => u.Usuario.Password)
+        @Html.TextBoxFor(u => u.Usuario.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.Usuario.Password, "", new { @class = "text-danger" })
+    </div>
+
     <button type="submit">Agregar<</button>
 </fieldset>
 }

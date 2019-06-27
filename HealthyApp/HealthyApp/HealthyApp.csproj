@@ -167,9 +167,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\EncryptionDecryption.cs" />
-    <Compile Include="Migrations\201906251920507_inicial.cs" />
-    <Compile Include="Migrations\201906251920507_inicial.Designer.cs">
-      <DependentUpon>201906251920507_inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201906271920266_initial.cs" />
+    <Compile Include="Migrations\201906271920266_initial.Designer.cs">
+      <DependentUpon>201906271920266_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cita.cs" />
@@ -323,8 +323,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906251920507_inicial.resx">
-      <DependentUpon>201906251920507_inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906271920266_initial.resx">
+      <DependentUpon>201906271920266_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

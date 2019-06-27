@@ -3,25 +3,26 @@ namespace HealthyApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class inicial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
             CreateTable(
                 "dbo.Cita",
                 c => new
-                {
-                    ID = c.Int(nullable: false, identity: true),
-                    MesID = c.Int(nullable: false),
-                    Dia_SemanaID = c.Int(nullable: false),
-                    Horario = c.String(nullable: false, maxLength: 10, unicode: false, storeType: "nvarchar"),
-                    Dia_Numero = c.Int(nullable: false),
-                })
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        MesID = c.Int(nullable: false),
+                        Dia_SemanaID = c.Int(nullable: false),
+                        Horario = c.String(nullable: false, maxLength: 10, unicode: false, storeType: "nvarchar"),
+                        Dia_Numero = c.Int(nullable: false),
+                    })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Dia_Semana", t => t.Dia_SemanaID, cascadeDelete: true)
-                .ForeignKey("dbo.Mes", t => t.MesID, cascadeDelete: true);
-               // .Index(t => t.Dia_SemanaID)
-                //.Index(t => t.MesID);
+                .ForeignKey("dbo.Mes", t => t.MesID, cascadeDelete: true)
+                //.Index(t => t.Dia_SemanaID)
+                //.Index(t => t.MesID)
+                ;
             
             CreateTable(
                 "dbo.Dia_Semana",
@@ -113,26 +114,21 @@ namespace HealthyApp.Migrations
                 ;
             
             CreateTable(
-                "dbo.Rol",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        TipoRol = c.String(nullable: false, maxLength: 45, unicode: false, storeType: "nvarchar"),
-                    })
-                .PrimaryKey(t => t.ID);
-            
-            CreateTable(
                 "dbo.Perfil",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
+                        LoginID = c.Int(nullable: false),
                         Nombre = c.String(nullable: false, maxLength: 25, unicode: false, storeType: "nvarchar"),
                         Apellido = c.String(nullable: false, maxLength: 25, unicode: false, storeType: "nvarchar"),
                         Edad = c.Int(nullable: false),
                         Genero = c.String(nullable: false, maxLength: 15, unicode: false, storeType: "nvarchar"),
                         Foto_paciente = c.String(nullable: false, unicode: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+                //.Index(t => t.LoginID)
+                ;
             
             CreateTable(
                 "dbo.Progreso",
@@ -153,27 +149,38 @@ namespace HealthyApp.Migrations
                 //.Index(t => t.PerfilID)
                 ;
             
+            CreateTable(
+                "dbo.Rol",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        TipoRol = c.String(nullable: false, maxLength: 45, unicode: false, storeType: "nvarchar"),
+                    })
+                .PrimaryKey(t => t.ID);
+            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Progreso", "PerfilID", "dbo.Perfil");
             DropForeignKey("dbo.Login", "RolID", "dbo.Rol");
+            DropForeignKey("dbo.Progreso", "PerfilID", "dbo.Perfil");
+            DropForeignKey("dbo.Perfil", "LoginID", "dbo.Login");
             DropForeignKey("dbo.Mi_Nutriologo", "ConsultorioID", "dbo.Consultorio");
             DropForeignKey("dbo.Cita", "MesID", "dbo.Mes");
             DropForeignKey("dbo.Cita", "Dia_SemanaID", "dbo.Dia_Semana");
             DropForeignKey("dbo.Mi_Menu", "Dia_SemanaID", "dbo.Dia_Semana");
             DropForeignKey("dbo.Mi_Menu", "ComidaID", "dbo.Comida");
-            DropIndex("dbo.Progreso", new[] { "PerfilID" });
             DropIndex("dbo.Login", new[] { "RolID" });
+            DropIndex("dbo.Progreso", new[] { "PerfilID" });
+            DropIndex("dbo.Perfil", new[] { "LoginID" });
             DropIndex("dbo.Mi_Nutriologo", new[] { "ConsultorioID" });
             DropIndex("dbo.Cita", new[] { "MesID" });
             DropIndex("dbo.Cita", new[] { "Dia_SemanaID" });
             DropIndex("dbo.Mi_Menu", new[] { "Dia_SemanaID" });
             DropIndex("dbo.Mi_Menu", new[] { "ComidaID" });
+            DropTable("dbo.Rol");
             DropTable("dbo.Progreso");
             DropTable("dbo.Perfil");
-            DropTable("dbo.Rol");
             DropTable("dbo.Login");
             DropTable("dbo.Mi_Nutriologo");
             DropTable("dbo.Consultorio");
