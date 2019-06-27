@@ -1,0 +1,117 @@
+﻿@model HealthyApp.ViewModel.ProgresoCommon
+@{
+    ViewBag.Title = "Paciente";
+}
+
+<h2>Paciente</h2>
+
+<p>
+    @Model.Foto_paciente<br />
+    Nombre: @Model.Nombre<br />
+    Apellido: @Model.Apellido<br />
+    Edad: @Model.Edad<br />
+    Genero: @Model.Genero<br />
+</p>
+<hr />
+@using (Html.BeginForm("Paciente", "Paciente", FormMethod.Post))
+{
+<fieldset>
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @if (ViewBag.Message != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+
+        </div>
+    }
+    <div>
+        @Html.LabelFor(p => p.progresoCreate.Estatura)
+        @Html.TextBoxFor(p => p.progresoCreate.Estatura, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.progresoCreate.Estatura, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(p => p.progresoCreate.Peso)
+        @Html.TextBoxFor(p => p.progresoCreate.Peso, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.progresoCreate.Peso, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(p => p.progresoCreate.Medida_Cadera)
+        @Html.TextBoxFor(p => p.progresoCreate.Medida_Cadera, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.progresoCreate.Medida_Cadera, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(p => p.progresoCreate.Medida_Cintura)
+        @Html.TextBoxFor(p => p.progresoCreate.Medida_Cintura, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.progresoCreate.Medida_Cintura, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(p => p.progresoCreate.Edad_Metabolica)
+        @Html.TextBoxFor(p => p.progresoCreate.Edad_Metabolica, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.progresoCreate.Edad_Metabolica, "", new { @class = "text-danger" })
+    </div>
+    @Html.HiddenFor(m => Model.IDPaciente)
+
+    <button type="submit">Agregar<</button>
+</fieldset>
+}
+<hr />
+<table>
+    <thead>
+        <tr>
+
+            <th>Fecha</th>
+            <th>Peso</th>
+            <th>Estatura</th>
+            <th>IMC</th>
+            <th>Medida de Cintura</th>
+            <th>Medida de Cadera</th>
+            <th>Edad Metabolica</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var progreso in Model.progresoResult.progresos)
+
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => progreso.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => progreso.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => progreso.Estatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => progreso.IMC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => progreso.Medida_Cintura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => progreso.Medida_Cadera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => progreso.Edad_Metabolica)
+            </td>
+        </tr>
+        }
+
+
+
+    </tbody>
+
+</table>
+
+
+
+
+

@@ -9,6 +9,7 @@ namespace HealthyApp.ViewModel
     public class Usuario
     {
 
+
         [Required(ErrorMessage = "El Nombre es Requerido")]
         [StringLength(25, ErrorMessage = "El nombre es de 25 caracteres")]
         [Display(Name="Nombre")]
