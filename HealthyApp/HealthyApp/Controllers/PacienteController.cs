@@ -26,6 +26,7 @@ namespace HealthyApp.Controllers
 
 
                 var query = (from p in dbContext.Perfils
+                             join l in dbContext.Logins on p.LoginID equals l.ID
                              where p.ID == ID
                              select new
                              {
@@ -33,7 +34,11 @@ namespace HealthyApp.Controllers
                                  apellido = p.Apellido,
                                  edad = p.Edad,
                                  genero = p.Genero,
-                                 foto = p.Foto_paciente
+                                 foto = p.Foto_paciente,
+                                 id = l.ID,
+                                 usuario=l.Usuario,
+                                 password = l.Password
+
                              }).SingleOrDefault();
 
                 progresoCommon.Nombre = query.nombre;
@@ -41,6 +46,9 @@ namespace HealthyApp.Controllers
                 progresoCommon.Edad = query.edad;
                 progresoCommon.Genero = query.genero;
                 progresoCommon.Foto_paciente = query.foto;
+                progresoCommon.LoginID = query.id;
+                progresoCommon.Usuario = query.usuario;
+                progresoCommon.Contrasena = query.password;
 
                 progresoCommon.progresoCreate = new ProgresoCreate();
 
@@ -134,5 +142,53 @@ namespace HealthyApp.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult EditarPaciente(ProgresoCommon modelo)
+        {
+          var queryLogin = (from l in dbContext.Logins
+                       where l.ID == modelo.LoginID
+                       select l).SingleOrDefault();
+
+            queryLogin.Password = modelo.Contrasena;
+            queryLogin.Usuario = modelo.Usuario;
+
+            dbContext.Entry(queryLogin).State = System.Data.Entity.EntityState.Modified;
+            dbContext.SaveChanges();
+
+
+            var queryPerfil =(from p in dbContext.Perfils
+                              where p.ID==modelo.IDPaciente
+                              select p).SingleOrDefault();
+
+            queryPerfil.Nombre = modelo.Nombre;
+            queryPerfil.Apellido = modelo.Apellido;
+            queryPerfil.Edad = modelo.Edad;
+            queryPerfil.Genero = modelo.Genero;
+
+            dbContext.Entry(queryPerfil).State = System.Data.Entity.EntityState.Modified;
+            dbContext.SaveChanges();
+
+            return RedirectToAction("Paciente", "Paciente", new { id = modelo.IDPaciente });
+        }
+
+        public ActionResult Eliminar(int PerfilID, int LoginID)
+        {
+            var queryProgreso = dbContext.progresos.Where(x => x.PerfilID == PerfilID).ToList();
+            foreach (var progreso in queryProgreso)
+            {
+                dbContext.progresos.Remove(progreso);
+            }
+            dbContext.SaveChanges();
+
+            var queryPerfil = dbContext.Perfils.Where(x => x.ID == PerfilID).SingleOrDefault();
+            dbContext.Perfils.Remove(queryPerfil);
+            dbContext.SaveChanges();
+
+            var queryLogin = dbContext.Logins.Where(x => x.ID == LoginID).SingleOrDefault();
+            dbContext.Logins.Remove(queryLogin);
+            dbContext.SaveChanges();
+
+            return RedirectToAction("Usuarios", "HomePage");
+        }
     }
 }

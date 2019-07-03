@@ -155,6 +155,13 @@ namespace HealthyApp.Controllers
                 //Si no se inicio sesion no se puede acceder a esta pagina
                 return RedirectToAction("Login", "Login");
             }
+
+        }
+        public ActionResult Salir()
+        {
+            Session["UserName"] = null;
+            return RedirectToAction("Login", "Login");
+
         }
     }
 }
