@@ -7,16 +7,23 @@ using System.Web;
 
 namespace HealthyApp.Models
 {
-    public class Comida
+    public class MenuSemanal
     {
+
         [Key]
         public int ID { get; set; }
 
-        [Required(ErrorMessage = "La descricion es Requerido")]
-        [StringLength(255, ErrorMessage = "La descripcion es de 255 caracteres")]
-        public string Descripcion { get; set; }
+
+        [ForeignKey("Login")]
+        [Required(ErrorMessage = "El campo LoginID es obligatorio")]
+        [Range(0, int.MaxValue, ErrorMessage = "Debe ser un numero entero")]
+        public int LoginID { get; set; }
+        public Login Login { get; set; }
 
         public virtual ICollection<MenuDes> MenuDes { get; set; }
+
+
+
 
     }
 }

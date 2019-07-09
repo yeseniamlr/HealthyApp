@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Web;
 
-namespace HealthyApp.Models
+namespace HealthyApp.ViewModel
 {
-    public class Comida
+    public class ComidasCreate
     {
-        [Key]
-        public int ID { get; set; }
-
+        [Display(Name ="Descripcion")]
         [Required(ErrorMessage = "La descricion es Requerido")]
         [StringLength(255, ErrorMessage = "La descripcion es de 255 caracteres")]
         public string Descripcion { get; set; }
 
-        public virtual ICollection<MenuDes> MenuDes { get; set; }
 
     }
 }

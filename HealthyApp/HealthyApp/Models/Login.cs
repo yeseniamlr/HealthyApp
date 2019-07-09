@@ -25,6 +25,8 @@ namespace HealthyApp.Models
         public string Password { get; set; }
 
         public virtual ICollection<Perfil> Perfils  { get; set; }
+        public virtual ICollection<MenuSemanal> MenuSemanals { get; set; }
+        public virtual ICollection<Cita> Citas { get; set; }
 
 
     }

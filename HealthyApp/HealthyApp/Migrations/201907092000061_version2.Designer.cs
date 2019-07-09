@@ -7,13 +7,13 @@ namespace HealthyApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class version2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(version2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906271920266_initial"; }
+            get { return "201907092000061_version2"; }
         }
         
         string IMigrationMetadata.Source
