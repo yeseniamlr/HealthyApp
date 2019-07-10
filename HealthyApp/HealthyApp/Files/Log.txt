@@ -50,3 +50,6 @@ Login -7/9/2019 3:13:22 PM El usuario : Omar ingresó
 Login -7/9/2019 3:16:01 PM El usuario : Omar ingresó
 Login -7/9/2019 3:18:46 PM El usuario : Omar ingresó
 Login -7/9/2019 3:23:53 PM El usuario : Omar ingresó
+Login -10/07/2019 01:01:02 p. m. El usuario : Madai ingresó
+Login -10/07/2019 01:02:26 p. m. El usuario : Madai ingresó
+Login -10/07/2019 01:27:59 p. m. El usuario : Madai ingresó
