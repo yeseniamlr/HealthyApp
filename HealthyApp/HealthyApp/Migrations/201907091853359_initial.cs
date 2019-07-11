@@ -10,15 +10,16 @@ namespace HealthyApp.Migrations
             CreateTable(
                 "dbo.Cita",
                 c => new
-                {
-                    ID = c.Int(nullable: false, identity: true),
-                    LoginID = c.Int(nullable: false),
-                    Horario = c.String(nullable: false, maxLength: 20, unicode: false, storeType: "nvarchar"),
-                    Fecha = c.DateTime(nullable: false, precision: 0),
-                })
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        LoginID = c.Int(nullable: false),
+                        Horario = c.String(nullable: false, maxLength: 20, unicode: false, storeType: "nvarchar"),
+                        Fecha = c.DateTime(nullable: false, precision: 0),
+                    })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-              //  .Index(t => t.LoginID);
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+                //.Index(t => t.LoginID)
+                ;
             
             CreateTable(
                 "dbo.Login",
@@ -31,8 +32,8 @@ namespace HealthyApp.Migrations
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Rol", t => t.RolID, cascadeDelete: true)
-              //  .Index(t => t.RolID)
-              ;
+                //.Index(t => t.RolID)
+                ;
             
             CreateTable(
                 "dbo.MenuSemanal",
@@ -43,8 +44,8 @@ namespace HealthyApp.Migrations
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
-              //  .Index(t => t.LoginID)
-              ;
+                //.Index(t => t.LoginID)
+                ;
             
             CreateTable(
                 "dbo.MenuDes",
@@ -60,7 +61,7 @@ namespace HealthyApp.Migrations
                 .ForeignKey("dbo.Dia", t => t.DiaID, cascadeDelete: true)
                 .ForeignKey("dbo.MenuSemanal", t => t.MenuSemanalID, cascadeDelete: true)
                 .ForeignKey("dbo.Tiempo", t => t.TiempoID, cascadeDelete: true)
-              //  .Index(t => t.ComidaID)
+                //.Index(t => t.ComidaID)
                 //.Index(t => t.DiaID)
                 //.Index(t => t.MenuSemanalID)
                 //.Index(t => t.TiempoID)
