@@ -1,0 +1,290 @@
+﻿@model HealthyApp.ViewModel.Semana
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Menu</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Dia
+            </th>
+                
+            <th>
+                Desayuno
+            </th>
+
+            <th>
+                Snack
+            </th>
+
+            <th>
+                Comida
+            </th>
+
+            <th>
+                Snack 2
+            </th>
+
+            <th>
+                Cena
+            </th>
+
+            <th>
+
+            </th>
+        </tr>
+        
+        
+    
+
+
+</thead>
+    <tbody>
+
+        <tr>
+            <td>Domigo</td>
+            <td>@foreach (var des in Model.domingo.Desayuno)
+            {
+                @des.ToString() <br />
+            }
+            </td>
+            <td>
+                @foreach (var sna in Model.domingo.Snack)
+                {
+                    @sna <br />
+                }
+            </td>
+            <td>
+                @foreach(var com in Model.domingo.Comida)
+                {
+                    @com.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna2 in Model.domingo.Snack2)
+                {
+                    @sna2.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var cen in Model.domingo.Cena)
+                {
+                    @cen.ToString() <br />
+                }
+            </td>
+            <td><button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new{id=Model.MenuSemanalID,dia=1}) '">Actualizar Menu</button></td>
+        </tr>
+        <tr>
+            <td>Lunes</td>
+            <td>
+                @foreach (var des in Model.lunes.Desayuno)
+                {
+                    @des.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna in Model.lunes.Snack)
+                {
+                    @sna.ToString() <br />
+                }
+                    </td>
+            <td>
+                @foreach (var com in Model.lunes.Comida)
+                {
+                    @com.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna2 in Model.lunes.Snack2)
+                {
+                    @sna2.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var cen in Model.lunes.Cena)
+                {
+                    @cen.ToString() <br />
+                }
+            </td>
+            <td><button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new{id=Model.MenuSemanalID,dia=2}) '">Actualizar Menu</button></td>
+        </tr>
+        <tr>
+            <td>Martes</td>
+            <td>
+                @foreach (var des in Model.martes.Desayuno)
+                {
+                    @des.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna in Model.martes.Snack)
+                {
+                    @sna.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var com in Model.martes.Comida)
+                {
+                    @com.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna2 in Model.martes.Snack2)
+                {
+                    @sna2.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var cen in Model.martes.Cena)
+                {
+                    @cen <br />
+                }
+            </td>
+            <td><button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new{id=Model.MenuSemanalID,dia=3}) '">Actualizar Menu</button></td>
+        </tr>
+        <tr>
+            <td>Miercoles</td>
+            <td>
+                @foreach (var des in Model.miercoles.Desayuno)
+                {
+                    @des.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna in Model.miercoles.Snack)
+                {
+                    @sna.ToString() <br />
+                }
+
+            </td>
+            <td>
+                @foreach (var com in Model.miercoles.Comida)
+                {
+                    @com.ToString() <br />
+                }
+
+            </td>
+            <td>
+                @foreach (var sna2 in Model.miercoles.Snack2)
+                {
+                    @sna2.ToString() <br />
+                }
+
+            </td>
+            <td>
+                @foreach (var cen in Model.miercoles.Cena)
+                {
+                    @cen.ToString() <br />
+                }
+
+            </td>
+            <td><button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new{id=Model.MenuSemanalID,dia=4}) '">Actualizar Menu</button></td>
+        </tr>
+        <tr>
+            <td>Jueves</td>
+            <td>
+                @foreach (var des in Model.jueves.Desayuno)
+                {
+                    @des.ToString() <br />
+                }
+
+            </td>
+            <td>
+                @foreach (var sna in Model.jueves.Snack)
+                {
+                    @sna.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var com in Model.jueves.Comida)
+                {
+                    @com.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna2 in Model.jueves.Snack2)
+                {
+                    @sna2.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var cen in Model.jueves.Cena)
+                {
+                    @cen.ToString() <br />
+                }
+            </td>
+            <td><button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new{id=Model.MenuSemanalID,dia=5}) '">Actualizar Menu</button></td>
+        </tr>
+        <tr>
+            <td>Viernes</td>
+            <td>
+                @foreach (var des in Model.viernes.Desayuno)
+                {
+                    @des.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna in Model.viernes.Snack)
+                {
+                    @sna.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var com in Model.viernes.Comida)
+                {
+                    @com.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna2 in Model.viernes.Snack2)
+                {
+                    @sna2.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var cen in Model.viernes.Cena)
+                {
+                    @cen.ToString() <br />
+                }
+            </td>
+            <td><button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new{id=Model.MenuSemanalID,dia=6}) '">Actualizar Menu</button></td>
+        </tr>
+        <tr>
+            <td>Sabado</td>
+            <td>
+                @foreach (var des in Model.sabado.Desayuno)
+                {
+                    @des.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna in Model.sabado.Snack)
+                {
+                    @sna.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var com in Model.sabado.Comida)
+                {
+                    @com.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var sna2 in Model.sabado.Snack2)
+                {
+                    @sna2.ToString() <br />
+                }
+            </td>
+            <td>
+                @foreach (var cen in Model.sabado.Cena)
+                {
+                    @cen.ToString() <br />
+                }
+            </td>
+            <td><button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new{id=Model.MenuSemanalID,dia=7}) '">Actualizar Menu</button></td>
+        </tr>
+    </tbody>
+</table>

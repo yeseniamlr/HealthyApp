@@ -9,6 +9,7 @@
     @Model.Foto_paciente<br />
 
 
+
 </p>
 <hr />
 @using (Html.BeginForm("EditarPaciente", "Paciente", FormMethod.Post))
@@ -153,7 +154,8 @@
     </tbody>
 
 </table>
-
+<hr /><button type="button" onclick="location.href='@Url.Action("Menu","Menu",new{id=Model.LoginID}) '">Menu Semanal</button>
+<hr />
 <center>
     <button type="button" onclick="location.href='@Url.Action("Usuarios","HomePage")'">
         Regresar

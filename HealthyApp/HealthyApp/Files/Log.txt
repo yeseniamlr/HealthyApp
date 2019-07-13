@@ -50,3 +50,9 @@ Login -7/9/2019 3:13:22 PM El usuario : Omar ingresó
 Login -7/9/2019 3:16:01 PM El usuario : Omar ingresó
 Login -7/9/2019 3:18:46 PM El usuario : Omar ingresó
 Login -7/9/2019 3:23:53 PM El usuario : Omar ingresó
+Login -7/13/2019 1:26:04 PM El usuario : Omar ingresó
+Login -7/13/2019 1:30:43 PM El usuario : Omar ingresó
+Login -7/13/2019 1:36:13 PM El usuario : Omar ingresó
+Login -7/13/2019 1:38:25 PM El usuario : Omar ingresó
+Login -7/13/2019 1:40:02 PM El usuario : Omar ingresó
+Login -7/13/2019 2:04:11 PM El usuario : Omar ingresó

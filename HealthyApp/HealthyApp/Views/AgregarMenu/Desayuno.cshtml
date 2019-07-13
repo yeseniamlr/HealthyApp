@@ -1,0 +1,43 @@
+﻿@model List<HealthyApp.ViewModel.AgregarMenu>
+@{
+    ViewBag.Title = "Desayuno";
+}
+
+<h2>Desayuno</h2>
+@using (Html.BeginForm("Desayuno", "AgregarMenu", FormMethod.Post))
+{
+    <fieldset>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (ViewBag.Message != null)
+        {
+            <div style="border:1px solid red">
+                @ViewBag.Message
+
+            </div>
+        }
+
+        <table class="table table-striped">
+            @for (int i = 0; i < Model.Count; i++)
+            { <tr>
+              <td>
+                  @Html.DisplayFor(m=>Model[i].Descripcion)
+              </td>
+              <td>
+                  @Html.EditorFor(m=>Model[i].isSelected,null,Model[i].ID)
+              </td>
+             </tr>
+             @Html.HiddenFor(m=>Model[i].ID,Model[i].ID)
+             @Html.HiddenFor(m=>Model[i].menuID,Model[i].menuID)
+             @Html.HiddenFor(m=>Model[i].tiempoID,Model[i].tiempoID)
+             @Html.HiddenFor(m=>Model[i].diaID,Model[i].diaID)
+
+
+            }
+        </table>
+        
+        <button type="submit">Siguiente</button>
+    </fieldset>
+}
+
