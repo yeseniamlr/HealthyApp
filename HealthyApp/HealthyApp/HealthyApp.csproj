@@ -165,23 +165,19 @@
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\NutriologoController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\EncryptionDecryption.cs" />
-    <Compile Include="Migrations\201907091853359_initial.cs" />
-    <Compile Include="Migrations\201907091853359_initial.Designer.cs">
-      <DependentUpon>201907091853359_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092000061_version2.cs" />
-    <Compile Include="Migrations\201907092000061_version2.Designer.cs">
-      <DependentUpon>201907092000061_version2.cs</DependentUpon>
+    <Compile Include="Migrations\201907151958071_initial.cs" />
+    <Compile Include="Migrations\201907151958071_initial.Designer.cs">
+      <DependentUpon>201907151958071_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cita.cs" />
     <Compile Include="Models\Comida.cs" />
-    <Compile Include="Models\Consultorio.cs" />
     <Compile Include="Models\Dia.cs" />
     <Compile Include="Models\HealthyAppDataBaseDbContext.cs" />
     <Compile Include="Models\Login.cs" />
@@ -203,6 +199,7 @@
     <Compile Include="ViewModel\Lunes.cs" />
     <Compile Include="ViewModel\Martes.cs" />
     <Compile Include="ViewModel\Miercoles.cs" />
+    <Compile Include="ViewModel\MiNutriolgo.cs" />
     <Compile Include="ViewModel\Progreso.cs" />
     <Compile Include="ViewModel\ProgresoCommon.cs" />
     <Compile Include="ViewModel\ProgresoCreate.cs" />
@@ -335,6 +332,7 @@
     <Content Include="Views\AgregarMenu\Snack.cshtml" />
     <Content Include="Views\AgregarMenu\Snack2.cshtml" />
     <Content Include="Views\Menu\Menu.cshtml" />
+    <Content Include="Views\Nutriologo\Informacionoalgoasi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -356,11 +354,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907091853359_initial.resx">
-      <DependentUpon>201907091853359_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092000061_version2.resx">
-      <DependentUpon>201907092000061_version2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907151958071_initial.resx">
+      <DependentUpon>201907151958071_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

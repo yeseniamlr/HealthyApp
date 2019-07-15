@@ -36,6 +36,8 @@ namespace HealthyApp.Controllers
                         {
                             Session["UserName"] = usm.UserName.ToString();
 
+                            Session["LoginID"] = 3;                                
+
                             var path = Server.MapPath("~") + @"Files";
                             var fileName = "/Log.txt";
                             StreamWriter sw = new StreamWriter(path + fileName, true);

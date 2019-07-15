@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace HealthyApp.Models
+namespace HealthyApp.ViewModel
 {
-    public class Mi_Nutriologo
+    public class MiNutriolgo
     {
+        [Required(ErrorMessage = "El Usuario es Requerido")]
+        [StringLength(45, ErrorMessage = "El usuario es de 45 caracteres")]
+        public string Usuario { get; set; }
 
-        [Key]
-        public int ID { get; set; }
-
-        [ForeignKey("Login")]
-        public int LoginID { get; set; }
-        public Login Login { get; set; }
+        [Required(ErrorMessage = "El Password es Requerido")]
+        [StringLength(45, ErrorMessage = "El password es de 45 caracteres")]
+        public string Password { get; set; }
 
         [Required(ErrorMessage = "La Foto es Requerida")]
         public string Foto { get; set; }
@@ -60,8 +59,6 @@ namespace HealthyApp.Models
 
         [Required(ErrorMessage = "Codigo Postal es Requerido")]
         public int Codigo_Postal { get; set; }
-
-
 
     }
 }

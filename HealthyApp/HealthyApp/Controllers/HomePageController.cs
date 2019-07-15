@@ -160,8 +160,9 @@ namespace HealthyApp.Controllers
         public ActionResult Salir()
         {
             Session["UserName"] = null;
+            Session["LoginID"] = null;
             return RedirectToAction("Login", "Login");
-
+           
         }
     }
 }

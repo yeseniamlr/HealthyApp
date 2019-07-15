@@ -23,7 +23,6 @@ namespace HealthyApp.Models
 
         public DbSet<Cita> citas { get; set; }
         public DbSet<Comida> comidas { get; set; }
-        public DbSet<Consultorio> consultorios { get; set; }
         public DbSet<Login> Logins { get; set; }
         public DbSet<MenuSemanal> mi_Menus { get; set; }
         public DbSet<Mi_Nutriologo> mi_Nutriologos { get; set; }
