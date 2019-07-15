@@ -33,6 +33,14 @@ namespace HealthyApp.Controllers
                     menu.tiempoID = 1;
                     menu.menuID = id;
                     menu.diaID = dia;
+
+                    var iselected = (from md in dbContext.MenuDes
+                                    where md.MenuSemanalID == id && md.DiaID == dia && md.TiempoID == 1 && md.ComidaID == comida.ID
+                                    select md).ToList();
+                    if (iselected.Count > 0)
+                    {
+                        menu.isSelected = true;
+                    }
                     agregarMenus.Add(menu);
 
 
@@ -131,6 +139,14 @@ namespace HealthyApp.Controllers
                     menu.tiempoID = 2;
                     menu.menuID = id;
                     menu.diaID = dia;
+                    var iselected = (from md in dbContext.MenuDes
+                                     where md.MenuSemanalID == id && md.DiaID == dia && md.TiempoID == 2 && md.ComidaID == comida.ID
+                                     select md).ToList();
+                    if (iselected.Count > 0)
+                    {
+                        menu.isSelected = true;
+                    }
+
                     agregarMenus.Add(menu);
 
 
@@ -230,6 +246,15 @@ namespace HealthyApp.Controllers
                     menu.tiempoID = 3;
                     menu.menuID = id;
                     menu.diaID = dia;
+
+                    var iselected = (from md in dbContext.MenuDes
+                                     where md.MenuSemanalID == id && md.DiaID == dia && md.TiempoID == 3 && md.ComidaID == comida.ID
+                                     select md).ToList();
+                    if (iselected.Count > 0)
+                    {
+                        menu.isSelected = true;
+                    }
+
                     agregarMenus.Add(menu);
 
 
@@ -326,6 +351,15 @@ namespace HealthyApp.Controllers
                     menu.tiempoID = 4;
                     menu.menuID = id;
                     menu.diaID = dia;
+
+                    var iselected = (from md in dbContext.MenuDes
+                                     where md.MenuSemanalID == id && md.DiaID == dia && md.TiempoID == 4 && md.ComidaID == comida.ID
+                                     select md).ToList();
+                    if (iselected.Count > 0)
+                    {
+                        menu.isSelected = true;
+                    }
+
                     agregarMenus.Add(menu);
 
 
@@ -424,6 +458,15 @@ namespace HealthyApp.Controllers
                     menu.tiempoID = 5;
                     menu.menuID = id;
                     menu.diaID = dia;
+
+                    var iselected = (from md in dbContext.MenuDes
+                                     where md.MenuSemanalID == id && md.DiaID == dia && md.TiempoID == 5 && md.ComidaID == comida.ID
+                                     select md).ToList();
+                    if (iselected.Count > 0)
+                    {
+                        menu.isSelected = true;
+                    }
+
                     agregarMenus.Add(menu);
 
 
@@ -489,12 +532,9 @@ namespace HealthyApp.Controllers
                     }
 
                 }
-                var querylogin = (from ms in dbContext.mi_Menus
-                                  join l in dbContext.Logins on ms.LoginID equals l.ID
-                                  where ms.ID == idlocal
-                                  select new { login = l.ID }).SingleOrDefault();
+             
 
-                return RedirectToAction("Menu", "Menu",new {id=querylogin.login });
+                return RedirectToAction("RegresarMenu", "AgregarMenu",new {MenuId= idlocal });
             }
 
             else
@@ -505,6 +545,15 @@ namespace HealthyApp.Controllers
             }
         }
 
+        public ActionResult RegresarMenu(int MenuId)
+        {
+            var querylogin = (from ms in dbContext.mi_Menus
+                              join l in dbContext.Logins on ms.LoginID equals l.ID
+                              where ms.ID == MenuId
+                              select new { login = l.ID }).SingleOrDefault();
+
+            return RedirectToAction("Menu", "Menu", new { id = querylogin.login });
+        } 
 
     }
 

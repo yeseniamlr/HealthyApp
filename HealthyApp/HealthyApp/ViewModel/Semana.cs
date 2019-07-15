@@ -15,6 +15,7 @@ namespace HealthyApp.ViewModel
         public Sabado sabado { get; set; }
         public Domingo domingo { get; set; }
         public int MenuSemanalID { get; set; }
+        public int ID { get; set; }
 
     }
 }

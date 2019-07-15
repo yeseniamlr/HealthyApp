@@ -38,7 +38,18 @@
             }
         </table>
 
-        <button type="submit">Siguiente</button>
+        <center>
+            <button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new {id=Model[0].menuID, dia=Model[0].diaID})'">
+                Anterior
+
+            </button>
+            <button type="submit">Siguiente</button>
+            
+            <button type="button" onclick="location.href='@Url.Action("RegresarMenu","AgregarMenu",new {MenuId=Model[0].menuID})'">
+                Regresar Menu
+
+            </button>
+        </center>
     </fieldset>
 }
 

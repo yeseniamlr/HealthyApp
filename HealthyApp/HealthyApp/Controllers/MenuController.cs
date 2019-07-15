@@ -31,7 +31,15 @@ namespace HealthyApp.Controllers
                                    where ms.LoginID == id
                                    select ms).SingleOrDefault();
 
+                var perfil = (from p in dbContext.Perfils
+                              where p.LoginID == id
+                              select new { ID = p.ID }).SingleOrDefault();
+
+
+                semana.ID = perfil.ID;
                 semana.MenuSemanalID = menusemanal.ID;
+
+
                 int idsemanal = menusemanal.ID;
 
                 for (int i = 1; i < 8; i++)

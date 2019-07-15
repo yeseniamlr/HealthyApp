@@ -39,7 +39,17 @@
             }
         </table>
 
-        <button type="submit">Siguiente</button>
+        <center>
+            <button type="button" onclick="location.href='@Url.Action("Snack2","AgregarMenu",new {id=Model[0].menuID, dia=Model[0].diaID})'">
+                Anterior
+
+            </button>
+            <button type="submit">Finalizar</button>
+
+            
+
+            
+       </center>
     </fieldset>
 }
 
