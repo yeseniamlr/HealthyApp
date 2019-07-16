@@ -171,9 +171,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\EncryptionDecryption.cs" />
-    <Compile Include="Migrations\201907151958071_initial.cs" />
-    <Compile Include="Migrations\201907151958071_initial.Designer.cs">
-      <DependentUpon>201907151958071_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201907091853359_initial.cs" />
+    <Compile Include="Migrations\201907091853359_initial.Designer.cs">
+      <DependentUpon>201907091853359_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907092000061_version2.cs" />
+    <Compile Include="Migrations\201907092000061_version2.Designer.cs">
+      <DependentUpon>201907092000061_version2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cita.cs" />
@@ -317,22 +321,22 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\HomePage\Usuarios.cshtml" />
-    <Content Include="Views\Paciente\Paciente.cshtml" />
-    <Content Include="Views\Comidas\Comidas.cshtml" />
     <Content Include="Views\AgregarMenu\Cena.cshtml" />
     <Content Include="Views\AgregarMenu\Comida.cshtml" />
     <Content Include="Views\AgregarMenu\Desayuno.cshtml" />
     <Content Include="Views\AgregarMenu\Snack.cshtml" />
     <Content Include="Views\AgregarMenu\Snack2.cshtml" />
+    <Content Include="Views\Comidas\Comidas.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\HomePage\Usuarios.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Menu\Menu.cshtml" />
     <Content Include="Views\Nutriologo\Informacionoalgoasi.cshtml" />
+    <Content Include="Views\Paciente\Paciente.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,8 +358,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907151958071_initial.resx">
-      <DependentUpon>201907151958071_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907091853359_initial.resx">
+      <DependentUpon>201907091853359_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907092000061_version2.resx">
+      <DependentUpon>201907092000061_version2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

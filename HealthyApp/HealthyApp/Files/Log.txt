@@ -56,13 +56,3 @@ Login -7/13/2019 1:36:13 PM El usuario : Omar ingresó
 Login -7/13/2019 1:38:25 PM El usuario : Omar ingresó
 Login -7/13/2019 1:40:02 PM El usuario : Omar ingresó
 Login -7/13/2019 2:04:11 PM El usuario : Omar ingresó
-Login -7/15/2019 8:18:39 AM El usuario : Omar ingresó
-Login -7/15/2019 8:21:56 AM El usuario : Omar ingresó
-Login -7/15/2019 1:28:13 PM El usuario : Omar ingresó
-Login -7/15/2019 1:39:03 PM El usuario : Omar ingresó
-Login -7/15/2019 1:51:55 PM El usuario : Omar ingresó
-Login -7/15/2019 2:17:29 PM El usuario : Omar ingresó
-Login -7/15/2019 4:40:33 PM El usuario : Omar ingresó
-Login -7/15/2019 4:41:02 PM El usuario : Doctora ingresó
-Login -7/15/2019 4:45:00 PM El usuario : Doctora ingresó
-Login -7/15/2019 4:50:53 PM El usuario : Omar ingresó
