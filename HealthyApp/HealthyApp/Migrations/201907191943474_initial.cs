@@ -10,15 +10,18 @@ namespace HealthyApp.Migrations
             CreateTable(
                 "dbo.Cita",
                 c => new
-                {
-                    ID = c.Int(nullable: false, identity: true),
-                    LoginID = c.Int(nullable: false),
-                    Horario = c.String(nullable: false, maxLength: 20, unicode: false, storeType: "nvarchar"),
-                    Fecha = c.DateTime(nullable: false, precision: 0),
-                })
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        LoginID = c.Int(nullable: false),
+                        Horario = c.String(nullable: false, maxLength: 20, unicode: false, storeType: "nvarchar"),
+                        Dia = c.Int(nullable: false),
+                        Mes = c.Int(nullable: false),
+                        Año = c.Int(nullable: false),
+                    })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            // .Index(t => t.LoginID);
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+                //.Index(t => t.LoginID)
+                ;
 
             CreateTable(
                 "dbo.Login",
@@ -30,38 +33,40 @@ namespace HealthyApp.Migrations
                     Password = c.String(nullable: false, maxLength: 45, unicode: false, storeType: "nvarchar"),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Rol", t => t.RolID, cascadeDelete: true);
-            // .Index(t => t.RolID);
-
+                .ForeignKey("dbo.Rol", t => t.RolID, cascadeDelete: true)
+            //.Index(t => t.RolID);
+            ;
             CreateTable(
                 "dbo.MenuSemanal",
                 c => new
-                {
-                    ID = c.Int(nullable: false, identity: true),
-                    LoginID = c.Int(nullable: false),
-                })
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        LoginID = c.Int(nullable: false),
+                    })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            //.Index(t => t.LoginID);
-
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+               // .Index(t => t.LoginID)
+                ;
+            
             CreateTable(
                 "dbo.MenuDes",
                 c => new
-                {
-                    MenuSemanalID = c.Int(nullable: false),
-                    DiaID = c.Int(nullable: false),
-                    TiempoID = c.Int(nullable: false),
-                    ComidaID = c.Int(nullable: false),
-                })
+                    {
+                        MenuSemanalID = c.Int(nullable: false),
+                        DiaID = c.Int(nullable: false),
+                        TiempoID = c.Int(nullable: false),
+                        ComidaID = c.Int(nullable: false),
+                    })
                 .PrimaryKey(t => new { t.MenuSemanalID, t.DiaID, t.TiempoID, t.ComidaID })
                 .ForeignKey("dbo.Comida", t => t.ComidaID, cascadeDelete: true)
                 .ForeignKey("dbo.Dia", t => t.DiaID, cascadeDelete: true)
                 .ForeignKey("dbo.MenuSemanal", t => t.MenuSemanalID, cascadeDelete: true)
-                .ForeignKey("dbo.Tiempo", t => t.TiempoID, cascadeDelete: true);
+                .ForeignKey("dbo.Tiempo", t => t.TiempoID, cascadeDelete: true)
                 //.Index(t => t.ComidaID)
-               // .Index(t => t.DiaID)
-               // .Index(t => t.MenuSemanalID)
-               // .Index(t => t.TiempoID);
+                //.Index(t => t.DiaID)
+                //.Index(t => t.MenuSemanalID)
+                //.Index(t => t.TiempoID)
+                ;
             
             CreateTable(
                 "dbo.Comida",
@@ -89,29 +94,30 @@ namespace HealthyApp.Migrations
                         Descripcion = c.String(nullable: false, maxLength: 25, unicode: false, storeType: "nvarchar"),
                     })
                 .PrimaryKey(t => t.ID);
-
+            
             CreateTable(
                 "dbo.Mi_Nutriologo",
                 c => new
-                {
-                    ID = c.Int(nullable: false, identity: true),
-                    LoginID = c.Int(nullable: false),
-                    Foto = c.String(nullable: false, unicode: false),
-                    Nombre = c.String(nullable: false, maxLength: 20, unicode: false, storeType: "nvarchar"),
-                    Apellido = c.String(nullable: false, maxLength: 30, unicode: false, storeType: "nvarchar"),
-                    Cedula = c.String(nullable: false, maxLength: 25, unicode: false, storeType: "nvarchar"),
-                    Telefono = c.String(nullable: false, maxLength: 15, unicode: false, storeType: "nvarchar"),
-                    Descripcion = c.String(nullable: false, maxLength: 100, unicode: false, storeType: "nvarchar"),
-                    Calle = c.String(nullable: false, maxLength: 40, unicode: false, storeType: "nvarchar"),
-                    Numero_Exterior = c.Int(nullable: false),
-                    Numero_Interior = c.Int(nullable: false),
-                    Municipio = c.String(nullable: false, maxLength: 40, unicode: false, storeType: "nvarchar"),
-                    Estado = c.String(nullable: false, maxLength: 25, unicode: false, storeType: "nvarchar"),
-                    Codigo_Postal = c.Int(nullable: false),
-                })
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        LoginID = c.Int(nullable: false),
+                        Foto = c.String(nullable: false, unicode: false),
+                        Nombre = c.String(nullable: false, maxLength: 20, unicode: false, storeType: "nvarchar"),
+                        Apellido = c.String(nullable: false, maxLength: 30, unicode: false, storeType: "nvarchar"),
+                        Cedula = c.String(nullable: false, maxLength: 25, unicode: false, storeType: "nvarchar"),
+                        Telefono = c.String(nullable: false, maxLength: 15, unicode: false, storeType: "nvarchar"),
+                        Descripcion = c.String(nullable: false, maxLength: 100, unicode: false, storeType: "nvarchar"),
+                        Calle = c.String(nullable: false, maxLength: 40, unicode: false, storeType: "nvarchar"),
+                        Numero_Exterior = c.Int(nullable: false),
+                        Numero_Interior = c.Int(nullable: false),
+                        Municipio = c.String(nullable: false, maxLength: 40, unicode: false, storeType: "nvarchar"),
+                        Estado = c.String(nullable: false, maxLength: 25, unicode: false, storeType: "nvarchar"),
+                        Codigo_Postal = c.Int(nullable: false),
+                    })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            // .Index(t => t.LoginID);
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+                //.Index(t => t.LoginID)
+                ;
 
             CreateTable(
                 "dbo.Perfil",
@@ -126,9 +132,9 @@ namespace HealthyApp.Migrations
                     Foto_paciente = c.String(nullable: false, unicode: false),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            // .Index(t => t.LoginID);
-
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+            //.Index(t => t.LoginID);
+            ;
             CreateTable(
                 "dbo.Progreso",
                 c => new
@@ -144,9 +150,9 @@ namespace HealthyApp.Migrations
                     Fecha = c.String(nullable: false, maxLength: 15, unicode: false, storeType: "nvarchar"),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Perfil", t => t.PerfilID, cascadeDelete: true);
-               // .Index(t => t.PerfilID);
-            
+                .ForeignKey("dbo.Perfil", t => t.PerfilID, cascadeDelete: true)
+            //  .Index(t => t.PerfilID);
+            ;
             CreateTable(
                 "dbo.Rol",
                 c => new

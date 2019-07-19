@@ -108,6 +108,11 @@ namespace HealthyApp.Controllers
                     dbContext.Perfils.Add(usuario);
                     dbContext.SaveChanges();
 
+                    MenuSemanal menuSemanal = new MenuSemanal();
+                    menuSemanal.LoginID = query.id;
+                    dbContext.mi_Menus.Add(menuSemanal);
+                    dbContext.SaveChanges();
+
                     return RedirectToAction("Usuarios", "HomePage");
                 }
                 else
