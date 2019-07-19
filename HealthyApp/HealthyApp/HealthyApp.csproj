@@ -171,13 +171,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\EncryptionDecryption.cs" />
-    <Compile Include="Migrations\201907091853359_initial.cs" />
-    <Compile Include="Migrations\201907091853359_initial.Designer.cs">
-      <DependentUpon>201907091853359_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092000061_version2.cs" />
-    <Compile Include="Migrations\201907092000061_version2.Designer.cs">
-      <DependentUpon>201907092000061_version2.cs</DependentUpon>
+    <Compile Include="Migrations\201907162051254_initial.cs" />
+    <Compile Include="Migrations\201907162051254_initial.Designer.cs">
+      <DependentUpon>201907162051254_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cita.cs" />
@@ -358,11 +354,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907091853359_initial.resx">
-      <DependentUpon>201907091853359_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092000061_version2.resx">
-      <DependentUpon>201907092000061_version2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907162051254_initial.resx">
+      <DependentUpon>201907162051254_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
