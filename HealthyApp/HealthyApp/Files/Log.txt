@@ -68,3 +68,11 @@ Login -7/19/2019 2:07:34 PM El usuario : Omar ingresó
 Login -7/19/2019 2:11:34 PM El usuario : Omar ingresó
 Login -7/19/2019 2:27:43 PM El usuario : Omar ingresó
 Login -7/19/2019 2:29:04 PM El usuario : Omar ingresó
+Login -20/07/2019 02:12:20 a. m. El usuario : Madai ingresó
+Login -20/07/2019 07:14:51 p. m. El usuario : Madai ingresó
+Login -20/07/2019 07:23:20 p. m. El usuario : Madai ingresó
+Login -20/07/2019 07:26:28 p. m. El usuario : Madai ingresó
+Login -20/07/2019 07:32:50 p. m. El usuario : Madai ingresó
+Login -21/07/2019 03:48:19 p. m. El usuario : Madai ingresó
+Login -21/07/2019 03:53:54 p. m. El usuario : Madai ingresó
+Login -22/07/2019 10:05:05 a. m. El usuario : Madai ingresó
