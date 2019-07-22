@@ -68,3 +68,4 @@ Login -7/19/2019 2:07:34 PM El usuario : Omar ingresó
 Login -7/19/2019 2:11:34 PM El usuario : Omar ingresó
 Login -7/19/2019 2:27:43 PM El usuario : Omar ingresó
 Login -7/19/2019 2:29:04 PM El usuario : Omar ingresó
+
