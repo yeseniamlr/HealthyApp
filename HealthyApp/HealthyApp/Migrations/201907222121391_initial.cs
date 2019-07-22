@@ -19,9 +19,9 @@ namespace HealthyApp.Migrations
                     Año = c.Int(nullable: false),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-               // .Index(t => t.LoginID);
-
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+            //.Index(t => t.LoginID);
+            ;
             CreateTable(
                 "dbo.Login",
                 c => new
@@ -32,9 +32,9 @@ namespace HealthyApp.Migrations
                     Password = c.String(nullable: false, maxLength: 45, unicode: false, storeType: "nvarchar"),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Rol", t => t.RolID, cascadeDelete: true);
-            //  .Index(t => t.RolID);
-
+                .ForeignKey("dbo.Rol", t => t.RolID, cascadeDelete: true)
+            //   .Index(t => t.RolID);
+            ;
             CreateTable(
                 "dbo.MenuSemanal",
                 c => new
@@ -43,9 +43,9 @@ namespace HealthyApp.Migrations
                     LoginID = c.Int(nullable: false),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            //  .Index(t => t.LoginID);
-
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+            //   .Index(t => t.LoginID);
+            ;
             CreateTable(
                 "dbo.MenuDes",
                 c => new
@@ -59,12 +59,12 @@ namespace HealthyApp.Migrations
                 .ForeignKey("dbo.Comida", t => t.ComidaID, cascadeDelete: true)
                 .ForeignKey("dbo.Dia", t => t.DiaID, cascadeDelete: true)
                 .ForeignKey("dbo.MenuSemanal", t => t.MenuSemanalID, cascadeDelete: true)
-                .ForeignKey("dbo.Tiempo", t => t.TiempoID, cascadeDelete: true);
-               // .Index(t => t.ComidaID)
-               // .Index(t => t.DiaID)
-                //.Index(t => t.MenuSemanalID)
-               // .Index(t => t.TiempoID);
-            
+                .ForeignKey("dbo.Tiempo", t => t.TiempoID, cascadeDelete: true)
+            //   .Index(t => t.ComidaID)
+            // .Index(t => t.DiaID)
+            //.Index(t => t.MenuSemanalID)
+            // .Index(t => t.TiempoID);
+            ;
             CreateTable(
                 "dbo.Comida",
                 c => new
@@ -112,9 +112,9 @@ namespace HealthyApp.Migrations
                     Codigo_Postal = c.Int(nullable: false),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            // .Index(t => t.LoginID);
-
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+            //   .Index(t => t.LoginID);
+            ;
             CreateTable(
                 "dbo.Perfil",
                 c => new
@@ -128,9 +128,9 @@ namespace HealthyApp.Migrations
                     Foto_paciente = c.String(nullable: false, unicode: false),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            //    .Index(t => t.LoginID);
-
+                .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true)
+            //   .Index(t => t.LoginID);
+            ;
             CreateTable(
                 "dbo.Progreso",
                 c => new
@@ -146,9 +146,9 @@ namespace HealthyApp.Migrations
                     Fecha = c.String(nullable: false, maxLength: 15, unicode: false, storeType: "nvarchar"),
                 })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Perfil", t => t.PerfilID, cascadeDelete: true);
-               // .Index(t => t.PerfilID);
-            
+                .ForeignKey("dbo.Perfil", t => t.PerfilID, cascadeDelete: true)
+            //   .Index(t => t.PerfilID);
+            ;
             CreateTable(
                 "dbo.Rol",
                 c => new

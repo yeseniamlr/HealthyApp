@@ -11,6 +11,7 @@
 
 
 </p>
+<button onclick="location.href='@Url.Action("CitasPaciente","Citas",new {loginID=Model.LoginID })'">Citas</button>
 <hr />
 @using (Html.BeginForm("EditarPaciente", "Paciente", FormMethod.Post))
 {

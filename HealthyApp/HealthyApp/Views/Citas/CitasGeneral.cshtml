@@ -1,0 +1,34 @@
+﻿@model List<HealthyApp.ViewModel.CitaGeneral>
+@{
+    ViewBag.Title = "CitasGeneral";
+}
+
+<h2>Citas General</h2>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <td>Dia</td>
+            <td>Horario</td>
+            <td>Paciente</td>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach(var cita in Model)
+        {
+
+        <tr>
+            <td>@Html.DisplayFor(item=>cita.Dia)</td>
+            <td>@Html.DisplayFor(item=>cita.Horario)</td>
+            <td>@Html.DisplayFor(item=>cita.Paciente)</td>
+        </tr>
+
+        }
+    </tbody>
+ </table>
+
+
+

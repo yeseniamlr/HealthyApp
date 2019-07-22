@@ -172,9 +172,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\EncryptionDecryption.cs" />
-    <Compile Include="Migrations\201907200701124_initial.cs" />
-    <Compile Include="Migrations\201907200701124_initial.Designer.cs">
-      <DependentUpon>201907200701124_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201907222121391_initial.cs" />
+    <Compile Include="Migrations\201907222121391_initial.Designer.cs">
+      <DependentUpon>201907222121391_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cita.cs" />
@@ -190,7 +190,10 @@
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Models\Tiempo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AgregarCita.cs" />
     <Compile Include="ViewModel\AgregarMenu.cs" />
+    <Compile Include="ViewModel\CitaGeneral.cs" />
+    <Compile Include="ViewModel\CitasPaciente.cs" />
     <Compile Include="ViewModel\Comidas.cs" />
     <Compile Include="ViewModel\ComidasCommon.cs" />
     <Compile Include="ViewModel\ComidasCreate.cs" />
@@ -334,13 +337,15 @@
     <Content Include="Views\Paciente\Paciente.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Citas\CitasGeneral.cshtml" />
+    <Content Include="Views\Citas\CitasPaciente.cshtml" />
+    <Content Include="Views\Citas\AgregarCita.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Api\Controllers\" />
     <Folder Include="Areas\Api\Models\" />
     <Folder Include="Areas\Api\Views\Shared\" />
-    <Folder Include="Views\Citas\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -356,8 +361,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907200701124_initial.resx">
-      <DependentUpon>201907200701124_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907222121391_initial.resx">
+      <DependentUpon>201907222121391_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

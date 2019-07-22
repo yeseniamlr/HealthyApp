@@ -1,0 +1,34 @@
+﻿@model HealthyApp.ViewModel.CitasPaciente
+@{
+    ViewBag.Title = "CitasPaciente";
+}
+
+<h2>Citas Paciente</h2>
+<button onclick="location.href='@Url.Action("AgregarCita","Citas",new {loginID=Model.loginId})'">Agregar Cita</button>
+@Html.HiddenFor(id => id.loginId)
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <td>Dia</td>
+            <td>Horario</td>
+            <td>Eliminar</td>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var cita in Model.citas)
+        {
+
+            <tr>
+                <td>@Html.DisplayFor(item => cita.Dia)</td>
+                <td>@Html.DisplayFor(item => cita.Horario)</td>
+                <td><button onclick="location.href='@Url.Action("EliminarCita","Citas",new {id=cita.ID})'">Eliminar</button></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

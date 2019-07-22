@@ -1,0 +1,48 @@
+﻿@model HealthyApp.ViewModel.AgregarCita
+@{
+    ViewBag.Title = "AgregarCita";
+}
+
+<h2>Agregar Cita</h2>
+
+
+@using (Html.BeginForm("AgregarCita", "Citas", FormMethod.Post))
+{
+    <fieldset>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (ViewBag.Message != null)
+        {
+            <div style="border:1px solid red">
+                @ViewBag.Message
+
+            </div>
+        }
+        @Html.HiddenFor(c => c.LoginID);
+        <div>
+            @Html.LabelFor(c => Model.Dia)
+            @Html.TextBoxFor(c => Model.Dia, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => Model.Dia, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(c => Model.Mes)
+            @Html.TextBoxFor(c => Model.Mes, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => Model.Mes, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(c=> Model.Año)
+            @Html.TextBoxFor(c => Model.Año, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => Model.Año, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(c => Model.Horario)
+            @Html.TextBoxFor(c => Model.Horario, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => Model.Horario, "", new { @class = "text-danger" })
+        </div>
+       
+
+        <button type="submit">Agregar</button>
+    </fieldset>
+}
+    <button onclick="location.href='@Url.Action("CitasPaciente","Citas",new {loginID=Model.LoginID })">Citas</button>

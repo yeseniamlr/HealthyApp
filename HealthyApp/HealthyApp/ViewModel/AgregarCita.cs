@@ -1,27 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace HealthyApp.Models
+namespace HealthyApp.ViewModel
 {
-    public class Cita
+    public class AgregarCita
     {
-        [Key]
-        public int ID { get; set; }
-
-        [ForeignKey("Login")]
+        
         [Required(ErrorMessage = "El campo LoginID es obligatorio")]
         [Range(0, int.MaxValue, ErrorMessage = "Debe ser un numero entero")]
         public int LoginID { get; set; }
-        public Login Login { get; set; }
-
-    
-
+        
         [Required(ErrorMessage = "Horario Requerido")]
-        [StringLength(20, ErrorMessage ="El Horario es de 20 caracteres")]
+        [StringLength(20, ErrorMessage = "El Horario es de 20 caracteres")]
         public string Horario { get; set; }
 
         [Required(ErrorMessage = "Dia Requerido")]
@@ -33,10 +26,7 @@ namespace HealthyApp.Models
         public int Mes { get; set; }
 
         [Required(ErrorMessage = "Año Requerido")]
-        [Range(0, 9999, ErrorMessage = "El numero debe ser entero")]
+        [Range(0,9999, ErrorMessage = "El numero debe ser entero")]
         public int Año { get; set; }
-
-
-
     }
 }
