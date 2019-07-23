@@ -222,6 +222,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Styles\css\estilo.css" />
     <Content Include="Content\Styles\css\main.css" />
     <Content Include="Content\Styles\css\util.css" />
     <Content Include="Content\Styles\fonts\font-awesome-4.7.0\css\font-awesome.css" />
