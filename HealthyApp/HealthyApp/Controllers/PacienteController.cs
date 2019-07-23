@@ -180,13 +180,38 @@ namespace HealthyApp.Controllers
             }
             dbContext.SaveChanges();
 
+            var queryMenu = (from m in dbContext.mi_Menus
+                             where m.LoginID == LoginID
+                             select m).SingleOrDefault();
+
+            var queryMenuDes = (from md in dbContext.MenuDes
+                                where md.MenuSemanalID == queryMenu.ID
+                                select md).ToList();
+            foreach (var md in queryMenuDes)
+            {
+                dbContext.MenuDes.Remove(md);
+            }
+            dbContext.mi_Menus.Remove(queryMenu);
+
+            var queryCitas = (from c in dbContext.citas
+                              where c.LoginID == LoginID
+                              select c).ToList();
+            foreach (var c in queryCitas)
+            {
+                dbContext.citas.Remove(c);
+            }
+            
+                
             var queryPerfil = dbContext.Perfils.Where(x => x.ID == PerfilID).SingleOrDefault();
             dbContext.Perfils.Remove(queryPerfil);
             dbContext.SaveChanges();
 
+
+
             var queryLogin = dbContext.Logins.Where(x => x.ID == LoginID).SingleOrDefault();
             dbContext.Logins.Remove(queryLogin);
             dbContext.SaveChanges();
+
 
             return RedirectToAction("Usuarios", "HomePage");
         }

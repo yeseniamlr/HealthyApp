@@ -128,12 +128,51 @@ namespace HealthyApp.Controllers
                     cita.Mes = model.Mes;
                     cita.Año = model.Año;
                     cita.Horario = model.Horario;
-                    dbContext.citas.Add(cita);
 
-                    dbContext.SaveChanges();
 
-                    return RedirectToAction("CitasPaciente", "Citas", new { loginID = model.LoginID });
+                    bool flag = true;
+
+                    var query = (from c in dbContext.citas select c).ToList();
+                    foreach (var c in query)
+                    {
+                        if(c.Año.Equals(cita.Año))
+                        {
+                            if(c.Mes.Equals(cita.Mes))
+                            {
+                                if (c.Dia.Equals(cita.Dia))
+                                {
+                                    if (c.Horario.Equals(cita.Horario))
+                                    {
+                                        flag = false;
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    if(flag)
+                    {
+                        dbContext.citas.Add(cita);
+
+                        dbContext.SaveChanges();
+
+                        return RedirectToAction("CitasPaciente", "Citas", new { loginID = model.LoginID });
+
+                    }
+                    else
+                    {
+                        //AgregarCita agregarCita = new AgregarCita();
+                        //agregarCita.Dia = cita.Dia;
+                        //agregarCita.Mes = cita.Mes;
+                        //agregarCita.Año = cita.Año;
+                        //agregarCita.Horario = "";
+                        //agregarCita.LoginID = cita.LoginID;
+                        string mensaje="Horario no disponible";
+                        TempData["Error"] = mensaje;
+                        return View(model);
+                    }
                 }
+
 
                 else
                 {
@@ -148,6 +187,27 @@ namespace HealthyApp.Controllers
 
             }
         }
+        public ActionResult EliminarCita(int id)
+        {
+            if (Session["UserName"] != null)
+            {
+                var query = (from c in dbContext.citas
+                             where c.ID == id
+                             select c).SingleOrDefault();
+                dbContext.citas.Remove(query);
+                dbContext.SaveChanges();
+
+                return RedirectToAction("CitasPaciente", "Citas", new { loginID = query.LoginID });
+
+            }
+            else
+            {
+                //Si no se inicio sesion no se puede acceder a esta pagina
+                return RedirectToAction("Login", "Login");
+
+            }
+        }
+
 
     }
 }

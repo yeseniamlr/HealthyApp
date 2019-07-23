@@ -19,7 +19,7 @@
 
             </div>
         }
-        @Html.HiddenFor(c => c.LoginID);
+        @Html.HiddenFor(c => c.LoginID)
         <div>
             @Html.LabelFor(c => Model.Dia)
             @Html.TextBoxFor(c => Model.Dia, new { @class = "form-control" })
@@ -31,7 +31,7 @@
             @Html.ValidationMessageFor(c => Model.Mes, "", new { @class = "text-danger" })
         </div>
         <div>
-            @Html.LabelFor(c=> Model.Año)
+            @Html.LabelFor(c => Model.Año)
             @Html.TextBoxFor(c => Model.Año, new { @class = "form-control" })
             @Html.ValidationMessageFor(c => Model.Año, "", new { @class = "text-danger" })
         </div>
@@ -40,9 +40,18 @@
             @Html.TextBoxFor(c => Model.Horario, new { @class = "form-control" })
             @Html.ValidationMessageFor(c => Model.Horario, "", new { @class = "text-danger" })
         </div>
-       
+
+
+        @if (TempData["Error"] != null)
+        {
+
+            <text> @TempData["Error"].ToString()<br />
+
+            </text>
+
+        }
 
         <button type="submit">Agregar</button>
     </fieldset>
 }
-    <button onclick="location.href='@Url.Action("CitasPaciente","Citas",new {loginID=Model.LoginID })">Citas</button>
+<center><button onclick="location.href='@Url.Action("CitasPaciente","Citas",new {loginID=Model.LoginID })'">Citas</button></center>
