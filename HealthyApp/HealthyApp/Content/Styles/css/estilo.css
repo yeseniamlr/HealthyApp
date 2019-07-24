@@ -25,6 +25,40 @@ th, td {
 
 }
 
+#hola {
+    float: left;
+    margin-left: 190px;
+}
+
+    #hola input {
+        width: 200px;
+        left: 45px;
+        border-radius: 10px;
+    }
+
+.button3 {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 0px;
+    padding: 6px 8px;
+    border: 0px solid #000000;
+    border-radius: 0px;
+    background: #000000;
+    background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#000000));
+    background: -moz-linear-gradient(top, #000000, #000000);
+    background: linear-gradient(to bottom, #000000, #000000);
+    font: normal normal bold 12px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+    .button3:hover,
+    .button3:active,
+    .button3:focus {
+        color: #ffffff;
+        text-decoration: none;
+    }
 
 /*contenedor*/
 #contenedor {

@@ -94,7 +94,7 @@ namespace HealthyApp.Controllers
                                     where mn.LoginID == login
                                     select mn).SingleOrDefault();
 
-                    querytos.Foto = Model.Foto;
+                    //querytos.Foto = Model.Foto;
                     querytos.Nombre = Model.Nombre;
                     querytos.Apellido = Model.Apellido;
                     querytos.Cedula = Model.Cedula;

@@ -20,7 +20,7 @@ namespace HealthyApp.Migrations
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            //.Index(t => t.LoginID);
+            // .Index(t => t.LoginID);
 
             CreateTable(
                 "dbo.Login",
@@ -33,7 +33,7 @@ namespace HealthyApp.Migrations
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Rol", t => t.RolID, cascadeDelete: true);
-            // .Index(t => t.RolID);
+            //.Index(t => t.RolID);
 
             CreateTable(
                 "dbo.MenuSemanal",
@@ -44,7 +44,7 @@ namespace HealthyApp.Migrations
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            //  .Index(t => t.LoginID);
+            //.Index(t => t.LoginID);
 
             CreateTable(
                 "dbo.MenuDes",
@@ -60,7 +60,7 @@ namespace HealthyApp.Migrations
                 .ForeignKey("dbo.Dia", t => t.DiaID, cascadeDelete: true)
                 .ForeignKey("dbo.MenuSemanal", t => t.MenuSemanalID, cascadeDelete: true)
                 .ForeignKey("dbo.Tiempo", t => t.TiempoID, cascadeDelete: true);
-               // .Index(t => t.ComidaID)
+                //.Index(t => t.ComidaID)
                 //.Index(t => t.DiaID)
                 //.Index(t => t.MenuSemanalID)
                 //.Index(t => t.TiempoID);
@@ -129,7 +129,7 @@ namespace HealthyApp.Migrations
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            // .Index(t => t.LoginID);
+            //.Index(t => t.LoginID);
 
             CreateTable(
                 "dbo.Progreso",
@@ -147,7 +147,7 @@ namespace HealthyApp.Migrations
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Perfil", t => t.PerfilID, cascadeDelete: true);
-                //.Index(t => t.PerfilID);
+               // .Index(t => t.PerfilID);
             
             CreateTable(
                 "dbo.Rol",
