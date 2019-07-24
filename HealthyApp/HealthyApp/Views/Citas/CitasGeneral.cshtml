@@ -4,31 +4,50 @@
 }
 
 <h2>Citas General</h2>
-<table class="table table-striped">
+@{ 
+    int compararYear = 0;
+    int compararMonth = 0;
+    int compararDay = 0;
+}
+<div action="" style="width:600px; margin:auto">
+    <table class="table table-striped">
 
-    <thead>
-        <tr>
-            <td>Dia</td>
-            <td>Horario</td>
-            <td>Paciente</td>
+        <thead>
+            <tr>
+                <th width="20%"></th>
+                <th width="80%"></th>
+            </tr>
 
-        </tr>
+        </thead>
 
-    </thead>
+        <tbody>
+            @foreach (var cita in Model)
+            {
+                int year = cita.Año;
+                int month = cita.Mes;
+                int day = cita.Dia;
 
-    <tbody>
-        @foreach(var cita in Model)
-        {
 
-        <tr>
-            <td>@Html.DisplayFor(item=>cita.Dia)</td>
-            <td>@Html.DisplayFor(item=>cita.Horario)</td>
-            <td>@Html.DisplayFor(item=>cita.Paciente)</td>
-        </tr>
+                if (compararYear != year || compararMonth != month || compararDay != day)
+                {
+                    <tr>
+                        <td colspan="2" style="text-align:center"><h3>@day/@month/@year</h3></td>
 
-        }
-    </tbody>
- </table>
+                    </tr>
+                    compararYear = year;
+                    compararMonth = month;
+                    compararDay = day;
+                }
 
+
+                <tr>
+                    <td>@Html.DisplayFor(item => cita.Horario)</td>
+                    <td>@Html.DisplayFor(item => cita.Paciente)</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
 
 

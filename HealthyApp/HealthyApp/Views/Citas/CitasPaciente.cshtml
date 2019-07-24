@@ -11,6 +11,8 @@
     <thead>
         <tr>
             <td>Dia</td>
+            <td>Mes</td>
+            <td>Año</td>
             <td>Horario</td>
             <td>Eliminar</td>
 
@@ -22,11 +24,14 @@
         @foreach (var cita in Model.citas)
         {
 
-            <tr>
-                <td>@Html.DisplayFor(item => cita.Dia)</td>
-                <td>@Html.DisplayFor(item => cita.Horario)</td>
-                <td><button onclick="location.href='@Url.Action("EliminarCita","Citas",new {id=cita.ID})'">Eliminar</button></td>
-            </tr>
+        <tr>
+            <td>@Html.DisplayFor(item => cita.Dia)</td>
+            <td>@Html.DisplayFor(item => cita.Mes)</td>
+            <td>@Html.DisplayFor(item => cita.Año)</td>
+            <td>@Html.DisplayFor(item => cita.Horario)</td>
+
+            <td><button onclick="location.href='@Url.Action("EliminarCita","Citas",new {id=cita.ID})'">Eliminar</button></td>
+        </tr>
 
         }
     </tbody>

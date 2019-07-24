@@ -23,6 +23,7 @@ namespace HealthyApp.Controllers
                 var query = (from c in dbContext.citas
                              join l in dbContext.Logins on c.LoginID equals l.ID
                              join p in dbContext.Perfils on l.ID equals p.LoginID
+                             orderby c.Año ascending, c.Mes ascending, c.Dia ascending
                              select new
                              {
                                  Dia = c.Dia,
@@ -33,16 +34,42 @@ namespace HealthyApp.Controllers
                              }).ToList();
 
                 List<CitaGeneral> citas = new List<CitaGeneral>();
+                
                 foreach (var cita in query)
                 {
-                    CitaGeneral citaGeneral = new CitaGeneral();
-                    citaGeneral.Dia = cita.Dia;
-                    citaGeneral.Mes = cita.Mes;
-                    citaGeneral.Año = cita.Año;
-                    citaGeneral.Horario = cita.Horario;
-                    citaGeneral.Paciente = cita.Paciente;
+                    if (cita.Año >= DateTime.Now.Year)
+                    {
+                        if (cita.Mes >= DateTime.Now.Month)
+                        {
+                            if (cita.Mes == DateTime.Now.Month)
+                            {
+                                if (cita.Dia >= DateTime.Now.Day)
+                                {
 
-                    citas.Add(citaGeneral);
+                                    CitaGeneral citaGeneral = new CitaGeneral();
+                                    citaGeneral.Dia = cita.Dia;
+                                    citaGeneral.Mes = cita.Mes;
+                                    citaGeneral.Año = cita.Año;
+                                    citaGeneral.Horario = cita.Horario;
+                                    citaGeneral.Paciente = cita.Paciente;
+
+                                    citas.Add(citaGeneral);
+                                }
+                            }
+                            else
+                            {
+                                CitaGeneral citaGeneral = new CitaGeneral();
+                                citaGeneral.Dia = cita.Dia;
+                                citaGeneral.Mes = cita.Mes;
+                                citaGeneral.Año = cita.Año;
+                                citaGeneral.Horario = cita.Horario;
+                                citaGeneral.Paciente = cita.Paciente;
+
+                                citas.Add(citaGeneral);
+
+                            }
+                        }
+                    }
                 }
 
                 return View(citas);
