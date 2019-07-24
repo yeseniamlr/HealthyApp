@@ -142,3 +142,9 @@ Login -24/07/2019 09:15:26 a. m. El usuario : Madai ingresó
 Login -24/07/2019 09:17:58 a. m. El usuario : Madai ingresó
 Login -24/07/2019 09:24:42 a. m. El usuario : Madai ingresó
 Login -24/07/2019 09:30:43 a. m. El usuario : Madai ingresó
+Login -24/07/2019 10:57:32 a. m. El usuario : Madai ingresó
+Login -24/07/2019 11:49:17 a. m. El usuario : Madai ingresó
+Login -24/07/2019 11:50:58 a. m. El usuario : Madai ingresó
+Login -24/07/2019 12:06:30 p. m. El usuario : Madai ingresó
+Login -24/07/2019 12:11:18 p. m. El usuario : Madai ingresó
+Login -24/07/2019 12:14:35 p. m. El usuario : Madai ingresó

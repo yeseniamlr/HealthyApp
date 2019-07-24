@@ -47,7 +47,7 @@ namespace HealthyApp.Controllers
 
                 minutriologo.Usuario = query.usuario;
                 minutriologo.Password = query.password;
-                //minutriologo.Foto = query.foto;
+                minutriologo.Foto = query.foto;
                 minutriologo.Nombre = query.nombre;
                 minutriologo.Apellido = query.apellido;
                 minutriologo.Cedula = query.cedula;

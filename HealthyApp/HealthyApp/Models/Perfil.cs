@@ -34,7 +34,7 @@ namespace HealthyApp.Models
         public string Genero { get; set; }
 
         [Required(ErrorMessage = "La Foto es Requerida")]
-        public byte[] Foto_paciente { get; set; }
+        public string Foto_paciente { get; set; }
 
         public virtual ICollection<Progreso> Progresos  { get; set; }
 

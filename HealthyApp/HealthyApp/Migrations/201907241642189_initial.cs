@@ -20,7 +20,7 @@ namespace HealthyApp.Migrations
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            //.Index(t => t.LoginID);
+            // .Index(t => t.LoginID);
 
             CreateTable(
                 "dbo.Login",
@@ -113,7 +113,7 @@ namespace HealthyApp.Migrations
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
-            //.Index(t => t.LoginID);
+            // .Index(t => t.LoginID);
 
             CreateTable(
                 "dbo.Perfil",
@@ -125,7 +125,7 @@ namespace HealthyApp.Migrations
                     Apellido = c.String(nullable: false, maxLength: 55, unicode: false, storeType: "nvarchar"),
                     Edad = c.Int(nullable: false),
                     Genero = c.String(nullable: false, maxLength: 25, unicode: false, storeType: "nvarchar"),
-                    Foto_paciente = c.Binary(nullable: false),
+                    Foto_paciente = c.String(nullable: false, unicode: false),
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Login", t => t.LoginID, cascadeDelete: true);
@@ -147,7 +147,7 @@ namespace HealthyApp.Migrations
                 })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Perfil", t => t.PerfilID, cascadeDelete: true);
-                //.Index(t => t.PerfilID);
+               // .Index(t => t.PerfilID);
             
             CreateTable(
                 "dbo.Rol",

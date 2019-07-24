@@ -45,7 +45,7 @@ namespace HealthyApp.Controllers
                 progresoCommon.Apellido = query.apellido;
                 progresoCommon.Edad = query.edad;
                 progresoCommon.Genero = query.genero;
-                //progresoCommon.Foto_paciente = query.foto;
+                progresoCommon.Foto_paciente = query.foto;
                 progresoCommon.LoginID = query.id;
                 progresoCommon.Usuario = query.usuario;
                 progresoCommon.Contrasena = query.password;

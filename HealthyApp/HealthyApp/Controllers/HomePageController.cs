@@ -99,7 +99,7 @@ namespace HealthyApp.Controllers
                     usuario.Apellido = model.Usuario.Apellido;
                     usuario.Edad = model.Usuario.Edad;
                     usuario.Genero = model.Usuario.Genero;
-                    //usuario.Foto_paciente = model.Usuario.Foto_paciente;
+                    usuario.Foto_paciente = model.Usuario.Foto_paciente;
                     usuario.LoginID = query.id;
                     
 
