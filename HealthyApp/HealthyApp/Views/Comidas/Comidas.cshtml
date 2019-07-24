@@ -31,7 +31,7 @@
 
 
                 <td>
-                    <button onclick="location.href='@Html.Raw(Url.Action("Borrar","Comidas",new {comida.ID}))'">
+                    <button onclick="location.href='@Html.Raw(Url.Action("Borrar","Comidas",new {comida.ID}))'" class="button">
                         Eliminar
                     </button>
                 </td>
@@ -64,7 +64,7 @@
             @Html.ValidationMessageFor(c => c.Comidas.Descripcion, "", new { @class = "text-danger" })
         </div>
 
-        <button type="submit">Agregar<</button>
+        <button type="submit" class="button">Agregar</button>
     </fieldset>
 
 

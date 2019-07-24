@@ -18,7 +18,7 @@ namespace HealthyApp.Models
         public Login Login { get; set; }
 
         [Required(ErrorMessage = "La Foto es Requerida")]
-        public string Foto { get; set; }
+        public byte[] Foto { get; set; }
 
         [Required(ErrorMessage = "El Nombre Es Requerido")]
         [StringLength(20, ErrorMessage = "El nombre es de 20 caracteres")]

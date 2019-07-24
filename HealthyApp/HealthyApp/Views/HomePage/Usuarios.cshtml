@@ -18,6 +18,16 @@
     <h2>Usuarios</h2>
     <hr />
 
+    <br>
+    <div id="hola">
+        <form >
+        <div id="hola">
+        <input type="search" id="miBusqueda" name="q">
+        <button class="button3">Buscar</button>
+        </div>
+        </form>
+    </div>
+
     <div id="contenedor">
         <div id="div1">
             <table class="table table-striped">
@@ -60,62 +70,64 @@
             @using (Html.BeginForm("Usuarios", "HomePage", FormMethod.Post))
             {
 
-            <fieldset>
-                <br>
-                <center>  <h4>REGISTRAR NUEVO PACIENTE</h4> </center>
-                <br>
-                <center>
-
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true)
-                    @if (ViewBag.Message != null)
-                    {
-                        <div style="border:1px solid red">
-                            @ViewBag.Message
-
-                        </div>
-                    }
-                    <div>
-                        @Html.LabelFor(u => u.Usuario.Nombre)
-                        @Html.TextBoxFor(u => u.Usuario.Nombre, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(u => u.Usuario.Nombre, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div>
-                        @Html.LabelFor(u => u.Usuario.Apellido)
-                        @Html.TextBoxFor(u => u.Usuario.Apellido, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(u => u.Usuario.Apellido, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div>
-                        @Html.LabelFor(u => u.Usuario.Edad)
-                        @Html.TextBoxFor(u => u.Usuario.Edad, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(u => u.Usuario.Edad, "", new { @class = "text-danger" })
-                    </div>
-                    <div>
-                        @Html.LabelFor(u => u.Usuario.Genero)
-                        @Html.TextBoxFor(u => u.Usuario.Genero, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(u => u.Usuario.Genero, "", new { @class = "text-danger" })
-                    </div>
-                    <div>
-                        @Html.LabelFor(u => u.Usuario.Foto_paciente)
-                        @Html.TextBoxFor(u => u.Usuario.Foto_paciente, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(u => u.Usuario.Foto_paciente, "", new { @class = "text-danger" })
-                    </div>
-                    <div>
-                        @Html.LabelFor(u => u.Usuario.User)
-                        @Html.TextBoxFor(u => u.Usuario.User, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(u => u.Usuario.User, "", new { @class = "text-danger" })
-                    </div>
-                    <div>
-                        @Html.LabelFor(u => u.Usuario.Password)
-                        @Html.TextBoxFor(u => u.Usuario.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(u => u.Usuario.Password, "", new { @class = "text-danger" })
-                    </div>
+                <fieldset>
                     <br>
-                    <button type="submit" class="button">Agregar</button>
+                    <center>  <h4>REGISTRAR NUEVO PACIENTE</h4> </center>
+                    <br>
+                    <center>
+
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        @if (ViewBag.Message != null)
+                        {
+                            <div style="border:1px solid red">
+                                @ViewBag.Message
+
+                            </div>
+                        }
+                        <div>
+                            @Html.LabelFor(u => u.Usuario.Nombre)
+                            @Html.TextBoxFor(u => u.Usuario.Nombre, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Usuario.Nombre, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div>
+                            @Html.LabelFor(u => u.Usuario.Apellido)
+                            @Html.TextBoxFor(u => u.Usuario.Apellido, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Usuario.Apellido, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div>
+                            @Html.LabelFor(u => u.Usuario.Edad)
+                            @Html.TextBoxFor(u => u.Usuario.Edad, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Usuario.Edad, "", new { @class = "text-danger" })
+                        </div>
+                        <div>
+                            @Html.LabelFor(u => u.Usuario.Genero)
+                            @Html.TextBoxFor(u => u.Usuario.Genero, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Usuario.Genero, "", new { @class = "text-danger" })
+                        </div>
+
+                        @*<div>
+                            @Html.LabelFor(u => u.Usuario.Foto_paciente)
+                            @Html.TextBoxFor(u => u.Usuario.Foto_paciente, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Usuario.Foto_paciente, "", new { @class = "text-danger" })
+                        </div>*@
+
+                        <div>
+                            @Html.LabelFor(u => u.Usuario.User)
+                            @Html.TextBoxFor(u => u.Usuario.User, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Usuario.User, "", new { @class = "text-danger" })
+                        </div>
+                        <div>
+                            @Html.LabelFor(u => u.Usuario.Password)
+                            @Html.TextBoxFor(u => u.Usuario.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Usuario.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <br>
+                        <button type="submit" class="button">Agregar</button>
                     </center>
-            </fieldset>
+                </fieldset>
             }
         </div>
     </div>

@@ -47,7 +47,7 @@ namespace HealthyApp.Controllers
 
                 minutriologo.Usuario = query.usuario;
                 minutriologo.Password = query.password;
-                minutriologo.Foto = query.foto;
+                //minutriologo.Foto = query.foto;
                 minutriologo.Nombre = query.nombre;
                 minutriologo.Apellido = query.apellido;
                 minutriologo.Cedula = query.cedula;
@@ -94,7 +94,7 @@ namespace HealthyApp.Controllers
                                     where mn.LoginID == login
                                     select mn).SingleOrDefault();
 
-                    querytos.Foto = Model.Foto;
+                    //querytos.Foto = Model.Foto;
                     querytos.Nombre = Model.Nombre;
                     querytos.Apellido = Model.Apellido;
                     querytos.Cedula = Model.Cedula;
