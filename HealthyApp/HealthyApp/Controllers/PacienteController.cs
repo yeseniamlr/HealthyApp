@@ -57,7 +57,6 @@ namespace HealthyApp.Controllers
 
                 var query1 = (from p in dbContext.progresos
                               where p.PerfilID == ID
-                              orderby p.Fecha ascending
                               select new
                               {
                                   imc = p.IMC,
