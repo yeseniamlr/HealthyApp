@@ -4,70 +4,82 @@
     ViewBag.Title = "Comidas";
 }
 
-<h2>Comidas</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paciente</title>
+    <link rel="stylesheet" href="paciente.css">
+    <link href="~/Content/Styles/css/paciente.css" rel="stylesheet" />
+</head>
+<body>
+    <center><h2>Comidas</h2></center>
 
+    @using (Html.BeginForm("Comidas", "Comidas", FormMethod.Post))
+    {
+        <fieldset>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @if (ViewBag.Message != null)
+            {
+                <div style="border:1px solid red">
+                    @ViewBag.Message
 
-            <th>Comida</th>
-            <th></th>
-
-        </tr>
-
-    </thead>
-
-    <tbody>
-
-        @foreach (var comida in Model.ComidasResult.comidas)
-
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => comida.Descripcion)
-                </td>
-
-
-
-                <td>
-                    <button onclick="location.href='@Html.Raw(Url.Action("Borrar","Comidas",new {comida.ID}))'" class="button">
-                        Eliminar
-                    </button>
-                </td>
-
-            </tr>
-        }
-
-
-
-    </tbody>
-
-</table>
-
-@using (Html.BeginForm("Comidas", "Comidas", FormMethod.Post))
-{
-    <fieldset>
-
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-        @if (ViewBag.Message != null)
-        {
-            <div style="border:1px solid red">
-                @ViewBag.Message
-
+                </div>
+            }
+            <div>
+                @Html.LabelFor(c => c.Comidas.Descripcion)
+                @Html.TextBoxFor(c => c.Comidas.Descripcion, new { @class = "form-control" })
+                @Html.ValidationMessageFor(c => c.Comidas.Descripcion, "", new { @class = "text-danger" })
             </div>
-        }
-        <div>
-            @Html.LabelFor(c => c.Comidas.Descripcion)
-            @Html.TextBoxFor(c => c.Comidas.Descripcion, new { @class = "form-control" })
-            @Html.ValidationMessageFor(c => c.Comidas.Descripcion, "", new { @class = "text-danger" })
+
+            <button type="submit" class="button">Agregar</button>
+        </fieldset>
+
+
+    }
+
+        <div id="comida">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th>Comida</th>
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var comida in Model.ComidasResult.comidas)
+
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => comida.Descripcion)
+                            </td>
+
+
+
+                            <td>
+                                <button onclick="location.href='@Html.Raw(Url.Action("Borrar","Comidas",new {comida.ID}))'" class="button">
+                                    Eliminar
+                                </button>
+                            </td>
+
+                        </tr>
+                    }
+
+
+
+                </tbody>
+
+            </table>
         </div>
 
-        <button type="submit" class="button">Agregar</button>
-    </fieldset>
 
-
-}
-
-
+</body>
+</html>

@@ -21,7 +21,6 @@ h2{
     border-radius: 31px;
     border: 1px solid #95bfb2;
     margin: auto;
-    float: center;
     margin-top: 50px;
     height: 550px;
     width: 350px;
@@ -29,6 +28,8 @@ h2{
     /*background-color: rgba(0, 0, 0, 0.3);*/
     color: #000;
 }
+
+
 
 #contenedor {
      margin: auto;
@@ -58,6 +59,17 @@ h2{
     width: 850px;
     background-color: white;
 }
+#comida {
+    border: 1px solid #95bfb2;
+    float: right;
+    overflow: scroll;
+    height: 600px;
+    width: 850px;
+    background-color: white;
+}
+#citas,citapa {
+    float: right;
+}
 
     #contenedor2 {
      margin: auto;
@@ -68,9 +80,9 @@ h2{
 }
 
 
+
  .buttonn{
     margin-top: 0px;
-    float: center;
  }
 
 table {
@@ -103,7 +115,7 @@ th, td {
 }
 .button:hover,
 .button:focus {
-    border: 0px solid ##5f7a72;
+    border: 0px solid #5f7a72;
     background: #95bfb2;
     background: -webkit-gradient(linear, left top, left bottom, from(#95bfb2), to(#5b766d));
     background: -moz-linear-gradient(top, #95bfb2, #5b766d);
@@ -137,7 +149,7 @@ th, td {
 }
 .buttonn:hover,
 .buttonn:focus {
-    border: 0px solid ##5f7a72;
+    border: 0px solid #5f7a72;
     background: #95bfb2;
     background: -webkit-gradient(linear, left top, left bottom, from(#95bfb2), to(#5b766d));
     background: -moz-linear-gradient(top, #95bfb2, #5b766d);
@@ -170,7 +182,7 @@ th, td {
 }
 .button1:hover,
 .button1:focus {
-    border: 0px solid ##5f7a72;
+    border: 0px solid #5f7a72;
     background: #95bfb2;
     background: -webkit-gradient(linear, left top, left bottom, from(#95bfb2), to(#5b766d));
     background: -moz-linear-gradient(top, #95bfb2, #5b766d);
@@ -214,7 +226,7 @@ th, td {
 }
 .button2:hover,
 .button2:focus {
-    border: 0px solid ##5f7a72;
+    border: 0px solid #5f7a72;
     background: #95bfb2;
     background: -webkit-gradient(linear, left top, left bottom, from(#95bfb2), to(#5b766d));
     background: -moz-linear-gradient(top, #95bfb2, #5b766d);

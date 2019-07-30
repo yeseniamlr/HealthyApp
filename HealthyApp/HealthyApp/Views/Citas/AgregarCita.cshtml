@@ -3,55 +3,71 @@
     ViewBag.Title = "AgregarCita";
 }
 
-<h2>Agregar Cita</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paciente</title>
+    <link rel="stylesheet" href="paciente.css">
+    <link href="~/Content/Styles/css/paciente.css" rel="stylesheet" />
+</head>
+<body>
+    <br >
+<center><h2>Agregar Cita</h2></center>
 
 
 @using (Html.BeginForm("AgregarCita", "Citas", FormMethod.Post))
 {
     <fieldset>
+        <center>
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @if (ViewBag.Message != null)
+            {
+                <div style="border:1px solid red">
+                    @ViewBag.Message
 
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-        @if (ViewBag.Message != null)
-        {
-            <div style="border:1px solid red">
-                @ViewBag.Message
-
+                </div>
+            }
+            @Html.HiddenFor(c => c.LoginID)
+            <div>
+                @Html.LabelFor(c => Model.Dia)
+                @Html.TextBoxFor(c => Model.Dia, new { @class = "form-control" })
+                @Html.ValidationMessageFor(c => Model.Dia, "", new { @class = "text-danger" })
             </div>
-        }
-        @Html.HiddenFor(c => c.LoginID)
-        <div>
-            @Html.LabelFor(c => Model.Dia)
-            @Html.TextBoxFor(c => Model.Dia, new { @class = "form-control" })
-            @Html.ValidationMessageFor(c => Model.Dia, "", new { @class = "text-danger" })
-        </div>
-        <div>
-            @Html.LabelFor(c => Model.Mes)
-            @Html.TextBoxFor(c => Model.Mes, new { @class = "form-control" })
-            @Html.ValidationMessageFor(c => Model.Mes, "", new { @class = "text-danger" })
-        </div>
-        <div>
-            @Html.LabelFor(c => Model.Año)
-            @Html.TextBoxFor(c => Model.Año, new { @class = "form-control" })
-            @Html.ValidationMessageFor(c => Model.Año, "", new { @class = "text-danger" })
-        </div>
-        <div>
-            @Html.LabelFor(c => Model.Horario)
-            @Html.TextBoxFor(c => Model.Horario, new { @class = "form-control" })
-            @Html.ValidationMessageFor(c => Model.Horario, "", new { @class = "text-danger" })
-        </div>
+            <div>
+                @Html.LabelFor(c => Model.Mes)
+                @Html.TextBoxFor(c => Model.Mes, new { @class = "form-control" })
+                @Html.ValidationMessageFor(c => Model.Mes, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(c => Model.Año)
+                @Html.TextBoxFor(c => Model.Año, new { @class = "form-control" })
+                @Html.ValidationMessageFor(c => Model.Año, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(c => Model.Horario)
+                @Html.TextBoxFor(c => Model.Horario, new { @class = "form-control" })
+                @Html.ValidationMessageFor(c => Model.Horario, "", new { @class = "text-danger" })
+            </div>
 
 
-        @if (TempData["Error"] != null)
-        {
+            @if (TempData["Error"] != null)
+            {
 
-            <text> @TempData["Error"].ToString()<br />
+                <text> @TempData["Error"].ToString()<br />
 
-            </text>
+                </text>
 
-        }
+            }
 
-        <button type="submit">Agregar</button>
+            <button type="submit" class="button">Agregar</button>
+        </center>
     </fieldset>
 }
-<center><button onclick="location.href='@Url.Action("CitasPaciente","Citas",new {loginID=Model.LoginID })'">Citas</button></center>
+    <br>
+<center>
+    <h4>VER CITAS</h4>
+    <button onclick="location.href='@Url.Action("CitasPaciente","Citas",new {loginID=Model.LoginID })'" class="button">Citas</button></center>
+</body>
+</html>

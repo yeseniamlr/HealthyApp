@@ -2,38 +2,53 @@
 @{
     ViewBag.Title = "CitasPaciente";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paciente</title>
+    <link rel="stylesheet" href="paciente.css">
+    <link href="~/Content/Styles/css/paciente.css" rel="stylesheet" />
+</head>
+<body>
+    <br>
+    <center><h2>Citas Paciente</h2> </center>
+    
+  
+    <div id="citapa">
+        <button onclick="location.href='@Url.Action("AgregarCita","Citas",new {loginID=Model.loginId})'" class="button">Agregar Cita</button>
+    </div>
+    <br>
+        @Html.HiddenFor(id => id.loginId)
+        <table class="table table-striped">
 
-<h2>Citas Paciente</h2>
-<button onclick="location.href='@Url.Action("AgregarCita","Citas",new {loginID=Model.loginId})'">Agregar Cita</button>
-@Html.HiddenFor(id => id.loginId)
-<table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Dia</td>
+                    <td>Mes</td>
+                    <td>Año</td>
+                    <td>Horario</td>
+                    <td>Eliminar</td>
 
-    <thead>
-        <tr>
-            <td>Dia</td>
-            <td>Mes</td>
-            <td>Año</td>
-            <td>Horario</td>
-            <td>Eliminar</td>
+                </tr>
 
-        </tr>
+            </thead>
 
-    </thead>
+            <tbody>
+                @foreach (var cita in Model.citas)
+                {
 
-    <tbody>
-        @foreach (var cita in Model.citas)
-        {
+                    <tr>
+                        <td>@Html.DisplayFor(item => cita.Dia)</td>
+                        <td>@Html.DisplayFor(item => cita.Mes)</td>
+                        <td>@Html.DisplayFor(item => cita.Año)</td>
+                        <td>@Html.DisplayFor(item => cita.Horario)</td>
 
-        <tr>
-            <td>@Html.DisplayFor(item => cita.Dia)</td>
-            <td>@Html.DisplayFor(item => cita.Mes)</td>
-            <td>@Html.DisplayFor(item => cita.Año)</td>
-            <td>@Html.DisplayFor(item => cita.Horario)</td>
+                        <td><button onclick="location.href='@Url.Action("EliminarCita","Citas",new {id=cita.ID})'" class="button">Eliminar</button></td>
+                    </tr>
 
-            <td><button onclick="location.href='@Url.Action("EliminarCita","Citas",new {id=cita.ID})'">Eliminar</button></td>
-        </tr>
-
-        }
-    </tbody>
-</table>
-
+                }
+            </tbody>
+        </table>
+</body>
+</html>

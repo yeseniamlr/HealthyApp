@@ -41,12 +41,12 @@
         </table>
 
         <center>
-            <button type="button" onclick="location.href='@Url.Action("Comida","AgregarMenu",new {id=Model[0].menuID, dia=Model[0].diaID})'">
+            <button type="button" onclick="location.href='@Url.Action("Comida","AgregarMenu",new {id=Model[0].menuID, dia=Model[0].diaID})'"class="button">
                 Anterior
 
             </button>
-            <button type="submit">Siguiente</button>
-            <button type="button" onclick="location.href='@Url.Action("RegresarMenu","AgregarMenu",new {MenuId=Model[0].menuID})'">
+            <button type="submit" class="button">Siguiente</button>
+            <button type="button" onclick="location.href='@Url.Action("RegresarMenu","AgregarMenu",new {MenuId=Model[0].menuID})'" class="button">
                 Regresar
 
             </button>

@@ -2,55 +2,65 @@
 @{
     ViewBag.Title = "Snack";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paciente</title>
+    <link rel="stylesheet" href="paciente.css">
+    <link href="~/Content/Styles/css/paciente.css" rel="stylesheet" />
+</head>
+<body>
+    <center><h2>Sanck</h2></center>
 
-<h2>Snack</h2>
-@using (Html.BeginForm("Snack", "AgregarMenu", FormMethod.Post))
-{
-    <fieldset>
+    @using (Html.BeginForm("Snack", "AgregarMenu", FormMethod.Post))
+    {
+        <fieldset>
 
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-        @if (ViewBag.Message != null)
-        {
-            <div style="border:1px solid red">
-                @ViewBag.Message
-
-            </div>
-        }
-
-        <table class="table table-striped">
-            @for (int i = 0; i < Model.Count; i++)
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @if (ViewBag.Message != null)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(m => Model[i].Descripcion)
-                    </td>
-                    <td>
-                        @Html.EditorFor(m => Model[i].isSelected, null, Model[i].ID)
-                    </td>
-                </tr>
-                @Html.HiddenFor(m => Model[i].ID, Model[i].ID)
-                @Html.HiddenFor(m => Model[i].menuID, Model[i].menuID)
-                @Html.HiddenFor(m => Model[i].tiempoID, Model[i].tiempoID)
-                @Html.HiddenFor(m => Model[i].diaID, Model[i].diaID)
+                <div style="border:1px solid red">
+                    @ViewBag.Message
 
-
+                </div>
             }
-        </table>
 
-        <center>
-            <button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new {id=Model[0].menuID, dia=Model[0].diaID})'">
-                Anterior
+            <table class="table table-striped">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(m => Model[i].Descripcion)
+                        </td>
+                        <td>
+                            @Html.EditorFor(m => Model[i].isSelected, null, Model[i].ID)
+                        </td>
+                    </tr>
+                    @Html.HiddenFor(m => Model[i].ID, Model[i].ID)
+                    @Html.HiddenFor(m => Model[i].menuID, Model[i].menuID)
+                    @Html.HiddenFor(m => Model[i].tiempoID, Model[i].tiempoID)
+                    @Html.HiddenFor(m => Model[i].diaID, Model[i].diaID)
 
-            </button>
-            <button type="submit">Siguiente</button>
-            
-            <button type="button" onclick="location.href='@Url.Action("RegresarMenu","AgregarMenu",new {MenuId=Model[0].menuID})'">
-                Regresar Menu
 
-            </button>
-        </center>
-    </fieldset>
-}
+                }
+            </table>
 
+            <center>
+                <button type="button" onclick="location.href='@Url.Action("Desayuno","AgregarMenu",new {id=Model[0].menuID, dia=Model[0].diaID})'"class="button">
+                    Anterior
+
+                </button>
+                <button type="submit"class="button">Siguiente</button>
+
+                <button type="button" onclick="location.href='@Url.Action("RegresarMenu","AgregarMenu",new {MenuId=Model[0].menuID})'"class="button">
+                    Regresar Menu
+
+                </button>
+            </center>
+        </fieldset>
+    }
+    </body>
+</html>
 

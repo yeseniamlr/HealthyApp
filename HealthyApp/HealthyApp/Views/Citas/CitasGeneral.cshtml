@@ -3,51 +3,61 @@
     ViewBag.Title = "CitasGeneral";
 }
 
-<h2>Citas General</h2>
-@{ 
-    int compararYear = 0;
-    int compararMonth = 0;
-    int compararDay = 0;
-}
-<div action="" style="width:600px; margin:auto">
-    <table class="table table-striped">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paciente</title>
+    <link rel="stylesheet" href="paciente.css">
+    <link href="~/Content/Styles/css/paciente.css" rel="stylesheet" />
+</head>
+<body>
+    <center> <h2>Citas General</h2></center>
+    @{
+        int compararYear = 0;
+        int compararMonth = 0;
+        int compararDay = 0;
+    }
+    <div action="" style="width:600px; margin:auto">
+        <table class="table table-striped">
 
-        <thead>
-            <tr>
-                <th width="20%"></th>
-                <th width="80%"></th>
-            </tr>
-
-        </thead>
-
-        <tbody>
-            @foreach (var cita in Model)
-            {
-                int year = cita.Año;
-                int month = cita.Mes;
-                int day = cita.Dia;
-
-
-                if (compararYear != year || compararMonth != month || compararDay != day)
-                {
-                    <tr>
-                        <td colspan="2" style="text-align:center"><h3>@day/@month/@year</h3></td>
-
-                    </tr>
-                    compararYear = year;
-                    compararMonth = month;
-                    compararDay = day;
-                }
-
-
+            <thead>
                 <tr>
-                    <td>@Html.DisplayFor(item => cita.Horario)</td>
-                    <td>@Html.DisplayFor(item => cita.Paciente)</td>
+                    <th width="20%"></th>
+                    <th width="80%"></th>
                 </tr>
 
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
 
+            <tbody>
+                @foreach (var cita in Model)
+                {
+                    int year = cita.Año;
+                    int month = cita.Mes;
+                    int day = cita.Dia;
+
+
+                    if (compararYear != year || compararMonth != month || compararDay != day)
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align:center"><h3>@day/@month/@year</h3></td>
+
+                        </tr>
+                        compararYear = year;
+                        compararMonth = month;
+                        compararDay = day;
+                    }
+
+
+                    <tr>
+                        <td>@Html.DisplayFor(item => cita.Horario)</td>
+                        <td>@Html.DisplayFor(item => cita.Paciente)</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>
 

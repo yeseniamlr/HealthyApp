@@ -13,92 +13,93 @@
 </head>
 
 <body>
-    <h2>Mis Datos</h2>
-
+    <center> <h2>Mis Datos</h2></center>
     @using (Html.BeginForm("Informacionoalgoasi", "Nutriologo", FormMethod.Post))
     {
-        <fieldset>
-            <center>
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true)
-                @if (ViewBag.Message != null)
-                {
-                    <div style="border:1px solid red">
-                        @ViewBag.Message
+        <div id="nutriologo">
+            <fieldset>
+                <center>
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    @if (ViewBag.Message != null)
+                    {
+                        <div style="border:1px solid red">
+                            @ViewBag.Message
 
+                        </div>
+                    }
+                    <div>
+                        @Html.LabelFor(mn => Model.Foto)
+                        @Html.TextBoxFor(mn => Model.Foto, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Foto, "", new { @class = "text-danger" })
                     </div>
-                }
-                <div>
-                    @Html.LabelFor(mn => Model.Foto)
-                    @Html.TextBoxFor(mn => Model.Foto, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Foto, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Nombre)
-                    @Html.TextBoxFor(mn => Model.Nombre, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Nombre, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Apellido)
-                    @Html.TextBoxFor(mn => Model.Apellido, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Apellido, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Cedula)
-                    @Html.TextBoxFor(mn => Model.Cedula, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Cedula, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Descripcion)
-                    @Html.TextAreaFor(mn => Model.Descripcion, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Descripcion, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Calle)
-                    @Html.TextBoxFor(mn => Model.Calle, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Calle, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Numero_Exterior)
-                    @Html.TextBoxFor(mn => Model.Numero_Exterior, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Numero_Exterior, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Numero_Interior)
-                    @Html.TextBoxFor(mn => Model.Numero_Interior, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Numero_Interior, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Municipio)
-                    @Html.TextBoxFor(mn => Model.Municipio, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Municipio, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Estado)
-                    @Html.TextBoxFor(mn => Model.Estado, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Estado, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(mn => Model.Codigo_Postal)
-                    @Html.TextBoxFor(mn => Model.Codigo_Postal, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Codigo_Postal, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(l => Model.Usuario)
-                    @Html.TextBoxFor(l => Model.Usuario, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Usuario, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    @Html.LabelFor(l => Model.Password)
-                    @Html.TextBoxFor(l => Model.Password, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(mn => Model.Password, "", new { @class = "text-danger" })
-                </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Nombre)
+                        @Html.TextBoxFor(mn => Model.Nombre, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Nombre, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Apellido)
+                        @Html.TextBoxFor(mn => Model.Apellido, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Apellido, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Cedula)
+                        @Html.TextBoxFor(mn => Model.Cedula, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Cedula, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Descripcion)
+                        @Html.TextAreaFor(mn => Model.Descripcion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Descripcion, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Calle)
+                        @Html.TextBoxFor(mn => Model.Calle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Calle, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Numero_Exterior)
+                        @Html.TextBoxFor(mn => Model.Numero_Exterior, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Numero_Exterior, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Numero_Interior)
+                        @Html.TextBoxFor(mn => Model.Numero_Interior, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Numero_Interior, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Municipio)
+                        @Html.TextBoxFor(mn => Model.Municipio, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Municipio, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Estado)
+                        @Html.TextBoxFor(mn => Model.Estado, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Estado, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(mn => Model.Codigo_Postal)
+                        @Html.TextBoxFor(mn => Model.Codigo_Postal, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Codigo_Postal, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(l => Model.Usuario)
+                        @Html.TextBoxFor(l => Model.Usuario, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Usuario, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(l => Model.Password)
+                        @Html.TextBoxFor(l => Model.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(mn => Model.Password, "", new { @class = "text-danger" })
+                    </div>
 
 
-                <button type="submit" class="button">Editar</button>
-            </center>
-        </fieldset>
-    }
-</body>
+                    <button type="submit" class="button">Editar</button>
+                </center>
+            </fieldset>
+            </div>
+            }
+    </body>
 </html>
 

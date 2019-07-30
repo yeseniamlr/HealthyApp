@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <h2>Paciente</h2>
+    <center> <h2>Paciente</h2></center>
 
     <p>
         @Model.Foto_paciente<br />
@@ -23,8 +23,11 @@
 
 
     </p>
-    <button onclick="location.href='@Url.Action("CitasPaciente","Citas",new {loginID=Model.LoginID })'" class="button">Citas</button>
 
+    <div id="citas"> 
+        <button onclick="location.href='@Url.Action("CitasPaciente","Citas",new {loginID=Model.LoginID })'" class="button">Citas</button>
+    </div>
+    <br >
     <hr />
     <div id="contenedor">
         <div id="div2">
