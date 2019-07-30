@@ -160,6 +160,22 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
+    <Compile Include="Areas\Api\Controllers\CitaAPPController.cs" />
+    <Compile Include="Areas\Api\Controllers\LoginAPPController.cs" />
+    <Compile Include="Areas\Api\Controllers\MenuAPPController.cs" />
+    <Compile Include="Areas\Api\Controllers\NutriologoAPPController.cs" />
+    <Compile Include="Areas\Api\Controllers\PerfilAPPController.cs" />
+    <Compile Include="Areas\Api\Controllers\ProgresoAPPController.cs" />
+    <Compile Include="Areas\Api\Models\CitaManager.cs" />
+    <Compile Include="Areas\Api\Models\CitaReturn.cs" />
+    <Compile Include="Areas\Api\Models\LoginManager.cs" />
+    <Compile Include="Areas\Api\Models\MenuManager.cs" />
+    <Compile Include="Areas\Api\Models\NutriologoManager.cs" />
+    <Compile Include="Areas\Api\Models\NutriologoResult.cs" />
+    <Compile Include="Areas\Api\Models\PerfilManager.cs" />
+    <Compile Include="Areas\Api\Models\PerfilReturn.cs" />
+    <Compile Include="Areas\Api\Models\ProgresoManager.cs" />
+    <Compile Include="Areas\Api\Models\ProgresoReturn.cs" />
     <Compile Include="Controllers\AgregarMenuController.cs" />
     <Compile Include="Controllers\CitasController.cs" />
     <Compile Include="Controllers\ComidasController.cs" />
@@ -347,8 +363,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Api\Controllers\" />
-    <Folder Include="Areas\Api\Models\" />
     <Folder Include="Areas\Api\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
