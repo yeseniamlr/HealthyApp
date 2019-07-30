@@ -68,7 +68,6 @@ h2{
 }
 #comida {
     border: 1px solid #95bfb2;
-    float: right;
     overflow: scroll;
     height: 600px;
     width: 900px;
