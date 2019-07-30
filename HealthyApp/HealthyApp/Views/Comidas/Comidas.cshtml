@@ -13,6 +13,7 @@
     <link href="~/Content/Styles/css/paciente.css" rel="stylesheet" />
 </head>
 <body>
+    <br>
     <center><h2>Comidas</h2></center>
 
     @using (Html.BeginForm("Comidas", "Comidas", FormMethod.Post))
@@ -39,46 +40,46 @@
 
 
     }
+    <br>
+    <div id="comida">
+        <table class="table table-striped">
+            <thead>
+                <tr>
 
-        <div id="comida">
-            <table class="table table-striped">
-                <thead>
+                    <th>Comida</th>
+                    <th></th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var comida in Model.ComidasResult.comidas)
+
+                {
                     <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => comida.Descripcion)
+                        </td>
 
-                        <th>Comida</th>
-                        <th></th>
+
+
+                        <td>
+                            <button onclick="location.href='@Html.Raw(Url.Action("Borrar","Comidas",new {comida.ID}))'" class="button">
+                                Eliminar
+                            </button>
+                        </td>
 
                     </tr>
-
-                </thead>
-
-                <tbody>
-
-                    @foreach (var comida in Model.ComidasResult.comidas)
-
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => comida.Descripcion)
-                            </td>
+                }
 
 
 
-                            <td>
-                                <button onclick="location.href='@Html.Raw(Url.Action("Borrar","Comidas",new {comida.ID}))'" class="button">
-                                    Eliminar
-                                </button>
-                            </td>
+            </tbody>
 
-                        </tr>
-                    }
-
-
-
-                </tbody>
-
-            </table>
-        </div>
+        </table>
+    </div>
 
 
 </body>

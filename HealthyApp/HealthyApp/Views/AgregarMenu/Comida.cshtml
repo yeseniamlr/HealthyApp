@@ -13,22 +13,24 @@
     <link href="~/Content/Styles/css/paciente.css" rel="stylesheet" />
 </head>
 <body>
+    <br>
     <center><h2>Comida</h2></center>
 
     @using (Html.BeginForm("Comida", "AgregarMenu", FormMethod.Post))
     {
-        <fieldset>
+       
+    <fieldset>
 
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true)
-            @if (ViewBag.Message != null)
-            {
-                <div style="border:1px solid red">
-                    @ViewBag.Message
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (ViewBag.Message != null)
+        {
+            <div style="border:1px solid red">
+                @ViewBag.Message
 
-                </div>
-            }
-
+            </div>
+        }
+        <div id="desa">
             <table class="table table-striped">
                 @for (int i = 0; i < Model.Count; i++)
                 {
@@ -48,20 +50,21 @@
 
                 }
             </table>
+        </div>
+        <center>
+            <button type="button" onclick="location.href='@Url.Action("Snack","AgregarMenu",new {id=Model[0].menuID, dia=Model[0].diaID})'" class="button">
+                Anterior
 
-            <center>
-                <button type="button" onclick="location.href='@Url.Action("Snack","AgregarMenu",new {id=Model[0].menuID, dia=Model[0].diaID})'"class="button">
-                    Anterior
+            </button>
+            <button type="submit" class="button">Siguiente</button>
+            <button type="button" onclick="location.href='@Url.Action("RegresarMenu","AgregarMenu",new {MenuId=Model[0].menuID})'" class="button">
+                Regresar Menu
 
-                </button>
-                <button type="submit" class="button">Siguiente</button>
-                <button type="button" onclick="location.href='@Url.Action("RegresarMenu","AgregarMenu",new {MenuId=Model[0].menuID})'"class="button">
-                    Regresar Menu
+            </button>
+        </center>
+    </fieldset>
 
-                </button>
-            </center>
-        </fieldset>
     }
-    </body>
+</body>
 </html>
 

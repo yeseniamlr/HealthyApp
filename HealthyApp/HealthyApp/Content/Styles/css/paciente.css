@@ -29,7 +29,14 @@ h2{
     color: #000;
 }
 
-
+#desa {
+    border: 1px solid #95bfb2;
+    float: right;
+    overflow: scroll;
+    height: 650px;
+    width: 900px;
+    background-color: white;
+}
 
 #contenedor {
      margin: auto;
@@ -64,24 +71,21 @@ h2{
     float: right;
     overflow: scroll;
     height: 600px;
-    width: 850px;
+    width: 900px;
     background-color: white;
 }
 #citas,citapa {
     float: right;
 }
-
-    #contenedor2 {
-     margin: auto;
-     margin-top: 20px;
-     height:550px;
-     width:600px;
-     background-color: white;
+#contenedor2 {
+    margin: auto;
+    margin-top: 20px;
+    height:550px;
+    width:600px;
+    background-color: white;
 }
 
-
-
- .buttonn{
+.buttonn{
     margin-top: 0px;
  }
 
@@ -253,3 +257,5 @@ th, td {
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA5ElEQVRIie2Vzw6CMAzGfyDxQPQhvPA8vv/FeISrxoOR4aXFOTrMcFyMX9KslLXf2v1pAZSsCA3uIv9dDj3MoMypx8qzE6mBBjgDPTCI9GJrZI7O9+EACoOkBk4yAmyBKrKQB3AX/QYcZByhjlovJas9gjlUBrkfy2kG1iaHKX/CNYj1RmDhkkiwt4xWBvo9JBKEsUrAWauP3YlFmCtRnxhrYxn9m6wCy7LwfUd97hQt2YMJ/DP87aNn+vvGf4l+tERhg/ClSwjeGf4q0Y52BFpeTSYmrcy1FjwxZkfOUxTFqk3/CVAEStyDZzmqAAAAAElFTkSuQmCC") no-repeat left center transparent;
     background-size: 100% 100%;
 }
+
+/*vistas de las comidas*/
